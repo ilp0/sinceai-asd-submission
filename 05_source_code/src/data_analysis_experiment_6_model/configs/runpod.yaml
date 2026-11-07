@@ -1,0 +1,39 @@
+# Experiment 6: settings shared by the six RunPod runs (contexts 3 h / 6 h / 12 h x LoRA 32/64, 64/128).
+# Chain: rp-<context>-<lora>.yaml -> runpod.yaml -> data.yaml -> base.yaml (experiment-5 base config).
+inherit: data.yaml
+
+run:
+  device: cuda
+  tf32: true                      # TF32 matmuls on Ampere/Ada/Hopper (fp32 weights and loss)
+  precision: fp32
+  num_workers: 6                  # 2 runs per 16-vCPU pod; one window costs 0.34 ms of CPU
+
+train:
+  # Measured on an A100 (7 Nov 2026, 3 h input): train 272 / 241 / 192 windows/s at batch 32 / 64 / 128,
+  # inference 663 / 502 / 349 windows/s. The variate-attention mask grows with (rows per batch)^2.
+  batch_size: 64
+  eval_batch_size: 32             # full validation pass (about 60 000 windows) in about 90 s
+  learning_rate: 3.0e-4
+  max_steps: 5000
+  warmup_steps: 200
+  # "Epoch every 100" (parameters.txt), changed by the user on 7 Nov 2026: validation, organizer benchmark and checkpoint every 250 steps.
+  eval_every: 250
+  checkpoint_every: 250
+  eval_max_windows: null          # all validation windows, so the benchmark reuses the same pass
+  early_stopping:
+    # Best checkpoint = highest organizer composite on all 7 validation pumps, maximum over the
+    # alert thresholds below. Selection uses validation data only.
+    metric: bench_all/composite_max
+    patience_evals: 8             # stop after 2 000 steps without a better composite
+
+data:
+  eval_stride_s: 60
+
+benchmark:
+  enabled: true
+  assets: ["*"]                   # all validation pumps: val-orig (PUMP-08/09) and val-new-45001 (5 pumps)
+  stride_s: 60
+  thresholds: [0.5, 0.7, 0.9, 0.99]
+
+predict:
+  threshold: 0.9

@@ -1,0 +1,2733 @@
+{
+ "llm": "Qwen3.5-4B (Q8_0, local)",
+ "model": "hf.co/unsloth/Qwen3.5-4B-GGUF:Q8_0",
+ "guides": {
+  "PUMP-09|MISALIGNMENT": {
+   "alert_id": "PUMP-09-A01",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Cooling-tower circulation pump CW-2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 9,
+       "title": "Alignment and coupling"
+      },
+      {
+       "num": 8,
+       "title": "Bearings"
+      },
+      {
+       "num": 3,
+       "title": "Operating limits"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      }
+     ],
+     "clauses": 32
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3",
+         "9.2"
+        ],
+        "text": "Confirm the probable misalignment by measuring vibration in the horizontal, vertical, and axial directions on the motor and pump bearings."
+       },
+       {
+        "citations": [
+         "9.3"
+        ],
+        "text": "Check the alignment using a laser tool to ensure the parallel offset is within 0.05 mm and the angular offset is within 0.05 mm/100 mm."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.7"
+        ],
+        "text": "Stop the pump, lock out the motor supply at the motor control centre, and attach a personal lock and tag before checking the coupling."
+       },
+       {
+        "citations": [
+         "9.4",
+         "9.5"
+        ],
+        "text": "Examine the coupling element for wear, check the foundation bolts for 120 N\u00b7m torque, and verify there is no soft foot under the motor feet."
+       },
+       {
+        "citations": [
+         "9.6"
+        ],
+        "text": "After correcting the alignment, run the pump for 1 hour and verify that vibration and bearing temperatures decrease."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.1",
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump if the vibration velocity reaches the alarm limit of 6.4 mm/s or if the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates a probable misalignment on PUMP-09, supported by a 71.8% increase in vibration velocity compared to the baseline. This requires immediate verification of alignment and coupling conditions before corrective work."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 32616,
+      "tokens": 360
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the probable misalignment by measuring vibration in the horizontal, vertical, and axial directions on the motor and pump bearings.",
+       "citations": [
+        "4.3",
+        "9.2"
+       ],
+       "supported": true,
+       "reason": "Clause [9.2] specifies measuring vibration in horizontal, vertical, and axial directions on motor and pump bearings.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Check the alignment using a laser tool to ensure the parallel offset is within 0.05 mm and the angular offset is within 0.05 mm/100 mm.",
+       "citations": [
+        "9.3"
+       ],
+       "supported": true,
+       "reason": "Clause [9.3] states permitted misalignment is 0.05 mm parallel offset and 0.05 mm/100 mm angular.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Stop the pump, lock out the motor supply at the motor control centre, and attach a personal lock and tag before checking the coupling.",
+       "citations": [
+        "2.1",
+        "2.7"
+       ],
+       "supported": true,
+       "reason": "Clause [2.1] requires stopping the pump, locking out the motor, and attaching a personal lock and tag.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Examine the coupling element for wear, check the foundation bolts for 120 N\u00b7m torque, and verify there is no soft foot under the motor feet.",
+       "citations": [
+        "9.4",
+        "9.5"
+       ],
+       "supported": true,
+       "reason": "Clause [9.4] lists examining the coupling, checking bolt torque, and verifying no soft foot.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "After correcting the alignment, run the pump for 1 hour and verify that vibration and bearing temperatures decrease.",
+       "citations": [
+        "9.6"
+       ],
+       "supported": true,
+       "reason": "Clause [9.6] states to run the pump for 1 hour after alignment and verify vibration and temperature decrease.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the maintenance manager and change over to the standby pump if the vibration velocity reaches the alarm limit of 6.4 mm/s or if the checks confirm a fault that cannot be corrected during operation.",
+       "citations": [
+        "3.1",
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause [4.6] supports escalation when a value reaches an alarm limit or a fault cannot be corrected.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 29726,
+      "tokens": 332
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3",
+         "9.2"
+        ],
+        "text": "Confirm the probable misalignment by measuring vibration in the horizontal, vertical, and axial directions on the motor and pump bearings."
+       },
+       {
+        "citations": [
+         "9.3"
+        ],
+        "text": "Check the alignment using a laser tool to ensure the parallel offset is within 0.05 mm and the angular offset is within 0.05 mm/100 mm."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.7"
+        ],
+        "text": "Stop the pump, lock out the motor supply at the motor control centre, and attach a personal lock and tag before checking the coupling."
+       },
+       {
+        "citations": [
+         "9.4",
+         "9.5"
+        ],
+        "text": "Examine the coupling element for wear, check the foundation bolts for 120 N\u00b7m torque, and verify there is no soft foot under the motor feet."
+       },
+       {
+        "citations": [
+         "9.6"
+        ],
+        "text": "After correcting the alignment, run the pump for 1 hour and verify that vibration and bearing temperatures decrease."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.1",
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump if the vibration velocity reaches the alarm limit of 6.4 mm/s or if the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates a probable misalignment on PUMP-09, supported by a 71.8% increase in vibration velocity compared to the baseline. This requires immediate verification of alignment and coupling conditions before corrective work."
+     },
+     "attempts": 1,
+     "seconds": 62.3
+    }
+   ]
+  },
+  "PUMP-09|IMBALANCE": {
+   "alert_id": "PUMP-09-A03",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Cooling-tower circulation pump CW-2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 10,
+       "title": "Impeller balance"
+      },
+      {
+       "num": 9,
+       "title": "Alignment and coupling"
+      },
+      {
+       "num": 3,
+       "title": "Operating limits"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      }
+     ],
+     "clauses": 28
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the imbalance fault with the checks of the applicable section before doing corrective work."
+       },
+       {
+        "citations": [
+         "10.2"
+        ],
+        "text": "Examine the impeller for scale, deposits, damaged vanes, or loose parts on the shaft."
+       },
+       {
+        "citations": [
+         "2.1"
+        ],
+        "text": "Stop the pump and lock out the motor supply at the motor control centre before opening it."
+       },
+       {
+        "citations": [
+         "2.2"
+        ],
+        "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve."
+       },
+       {
+        "citations": [
+         "10.3"
+        ],
+        "text": "Clean the impeller and balance it to grade G6.3 after the repair."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when the suction pressure decrease shows more than 15 % from the normal value."
+      },
+      "summary": "The alert indicates a probable imbalance fault on PUMP-09, supported by the vibration velocity rising to 2.338 mm/s against a baseline of 1.266 mm/s."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 32815,
+      "tokens": 360
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the imbalance fault with the checks of the applicable section before doing corrective work.",
+       "citations": [
+        "4.3"
+       ],
+       "supported": true,
+       "reason": "Clause [4.3] states to confirm the fault with applicable section checks before corrective work.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Examine the impeller for scale, deposits, damaged vanes, or loose parts on the shaft.",
+       "citations": [
+        "10.2"
+       ],
+       "supported": true,
+       "reason": "Clause [10.2] lists scale, deposits, damaged vanes, and loose parts as causes to examine.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Stop the pump and lock out the motor supply at the motor control centre before opening it.",
+       "citations": [
+        "2.1"
+       ],
+       "supported": true,
+       "reason": "Clause [2.1] instructs to stop the pump and lock out the motor supply before opening.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve.",
+       "citations": [
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clause [2.2] requires closing/locking valves and releasing pressure through the drain valve.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Clean the impeller and balance it to grade G6.3 after the repair.",
+       "citations": [
+        "10.3"
+       ],
+       "supported": true,
+       "reason": "Clause [10.3] states to examine, clean, and balance the impeller to grade G6.3 after repair.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the maintenance manager and change over to the standby pump when the suction pressure decrease shows more than 15 % from the normal value.",
+       "citations": [
+        "3.6"
+       ],
+       "supported": true,
+       "reason": "Clause [3.6] defines the 15% suction pressure decrease limit, and [4.6] mandates escalation and standby changeover at alarm limits.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 29097,
+      "tokens": 328
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the imbalance fault with the checks of the applicable section before doing corrective work."
+       },
+       {
+        "citations": [
+         "10.2"
+        ],
+        "text": "Examine the impeller for scale, deposits, damaged vanes, or loose parts on the shaft."
+       },
+       {
+        "citations": [
+         "2.1"
+        ],
+        "text": "Stop the pump and lock out the motor supply at the motor control centre before opening it."
+       },
+       {
+        "citations": [
+         "2.2"
+        ],
+        "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve."
+       },
+       {
+        "citations": [
+         "10.3"
+        ],
+        "text": "Clean the impeller and balance it to grade G6.3 after the repair."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when the suction pressure decrease shows more than 15 % from the normal value."
+      },
+      "summary": "The alert indicates a probable imbalance fault on PUMP-09, supported by the vibration velocity rising to 2.338 mm/s against a baseline of 1.266 mm/s."
+     },
+     "attempts": 1,
+     "seconds": 61.9
+    }
+   ]
+  },
+  "PUMP-08|SUCTION_STRAINER_CLOGGING": {
+   "alert_id": "PUMP-08-A01",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Seawater cooling pump No. 2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 5,
+       "title": "Suction strainer"
+      },
+      {
+       "num": 6,
+       "title": "Cavitation and suction conditions"
+      },
+      {
+       "num": 3,
+       "title": "Operating limits"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      },
+      {
+       "num": 15,
+       "title": "Standby pump changeover"
+      }
+     ],
+     "clauses": 34
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the suction strainer clogging with checks of section 5 before doing corrective work."
+       },
+       {
+        "citations": [
+         "5.3"
+        ],
+        "text": "Check the pressure difference across the strainer on the local gauge."
+       },
+       {
+        "citations": [
+         "5.3"
+        ],
+        "text": "Clean the basket when the suction pressure is more than 15 % below the normal value at the same speed."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.2"
+        ],
+        "text": "Stop the pump, lock out the motor supply, close and lock the valves, and release the pressure through the drain valve."
+       },
+       {
+        "citations": [
+         "5.4"
+        ],
+        "text": "Change over to the clean basket with the changeover lever, then isolate, drain and open the clogged side."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump when the suction pressure decreases by more than 15 % from the normal value."
+      },
+      "summary": "The alert indicates a probable suction strainer clogging on PUMP-08, supported by a suction pressure drop of -8.6 % compared to the baseline. Verify the fault with strainer checks before performing corrective work."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 34427,
+      "tokens": 388
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the suction strainer clogging with checks of section 5 before doing corrective work.",
+       "citations": [
+        "4.3"
+       ],
+       "supported": true,
+       "reason": "Clause 4.3 states to confirm faults with applicable section checks before corrective work.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Check the pressure difference across the strainer on the local gauge.",
+       "citations": [
+        "5.3"
+       ],
+       "supported": true,
+       "reason": "Clause 5.3 explicitly instructs to check the pressure difference across the strainer on the local gauge.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Clean the basket when the suction pressure is more than 15 % below the normal value at the same speed.",
+       "citations": [
+        "5.3"
+       ],
+       "supported": true,
+       "reason": "Clause 5.3 states to clean the basket when suction pressure is more than 15% below normal.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Stop the pump, lock out the motor supply, close and lock the valves, and release the pressure through the drain valve.",
+       "citations": [
+        "2.1",
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clauses 2.1 and 2.2 cover stopping, locking out, closing valves, and releasing pressure.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Change over to the clean basket with the changeover lever, then isolate, drain and open the clogged side.",
+       "citations": [
+        "5.4"
+       ],
+       "supported": true,
+       "reason": "Clause 5.4 describes changing over to the clean basket, then isolating, draining, and opening the clogged side.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the chief engineer and change over to the standby pump when the suction pressure decreases by more than 15 % from the normal value.",
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause 3.4 defines the 15% suction pressure decrease limit, and 4.6 mandates escalation to the chief engineer and standby changeover.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 29088,
+      "tokens": 329
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the suction strainer clogging with checks of section 5 before doing corrective work."
+       },
+       {
+        "citations": [
+         "5.3"
+        ],
+        "text": "Check the pressure difference across the strainer on the local gauge."
+       },
+       {
+        "citations": [
+         "5.3"
+        ],
+        "text": "Clean the basket when the suction pressure is more than 15 % below the normal value at the same speed."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.2"
+        ],
+        "text": "Stop the pump, lock out the motor supply, close and lock the valves, and release the pressure through the drain valve."
+       },
+       {
+        "citations": [
+         "5.4"
+        ],
+        "text": "Change over to the clean basket with the changeover lever, then isolate, drain and open the clogged side."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump when the suction pressure decreases by more than 15 % from the normal value."
+      },
+      "summary": "The alert indicates a probable suction strainer clogging on PUMP-08, supported by a suction pressure drop of -8.6 % compared to the baseline. Verify the fault with strainer checks before performing corrective work."
+     },
+     "attempts": 1,
+     "seconds": 63.5
+    }
+   ]
+  },
+  "PUMP-08|BEARING_WEAR": {
+   "alert_id": "PUMP-08-A02",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Seawater cooling pump No. 2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 8,
+       "title": "Bearings"
+      },
+      {
+       "num": 3,
+       "title": "Operating limits"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      }
+     ],
+     "clauses": 26
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the probable bearing wear fault with checks from section 8 before doing corrective work."
+       },
+       {
+        "citations": [
+         "8.3"
+        ],
+        "text": "Measure the vibration velocity and acceleration on both bearing housings with a hand-held meter."
+       },
+       {
+        "citations": [
+         "2.1"
+        ],
+        "text": "Stop the pump and lock out the motor supply at the main switchboard, attaching a personal lock and tag."
+       },
+       {
+        "citations": [
+         "2.2"
+        ],
+        "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve until the gauge shows zero."
+       },
+       {
+        "citations": [
+         "2.3"
+        ],
+        "text": "Ensure the sea-suction valve is closed and held, keeping a blank flange and a bilge pump ready before opening any part below the waterline."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates probable bearing wear on PUMP-08, supported by a 16.7% increase in the crest factor signal. This requires immediate verification of vibration levels and safety isolation before any corrective maintenance."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 32951,
+      "tokens": 400
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the probable bearing wear fault with checks from section 8 before doing corrective work.",
+       "citations": [
+        "4.3"
+       ],
+       "supported": true,
+       "reason": "Clause [4.3] states to confirm the fault with checks from the applicable section before corrective work.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Measure the vibration velocity and acceleration on both bearing housings with a hand-held meter.",
+       "citations": [
+        "8.3"
+       ],
+       "supported": true,
+       "reason": "Clause [8.3] explicitly instructs to measure vibration velocity and acceleration on both bearing housings with a hand-held meter.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Stop the pump and lock out the motor supply at the main switchboard, attaching a personal lock and tag.",
+       "citations": [
+        "2.1"
+       ],
+       "supported": true,
+       "reason": "Clause [2.1] requires stopping the pump, locking out the motor supply, and attaching a personal lock and tag.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve until the gauge shows zero.",
+       "citations": [
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clause [2.2] instructs to close/lock valves, release pressure via drain, and ensure the gauge shows zero.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Ensure the sea-suction valve is closed and held, keeping a blank flange and a bilge pump ready before opening any part below the waterline.",
+       "citations": [
+        "2.3"
+       ],
+       "supported": true,
+       "reason": "Clause [2.3] mandates ensuring the sea-suction valve is closed and held, with a blank flange and bilge pump ready.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation.",
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause [4.6] supports escalation when a measured value reaches an alarm limit or checks confirm an uncorrectable fault.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 28709,
+      "tokens": 337
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the probable bearing wear fault with checks from section 8 before doing corrective work."
+       },
+       {
+        "citations": [
+         "8.3"
+        ],
+        "text": "Measure the vibration velocity and acceleration on both bearing housings with a hand-held meter."
+       },
+       {
+        "citations": [
+         "2.1"
+        ],
+        "text": "Stop the pump and lock out the motor supply at the main switchboard, attaching a personal lock and tag."
+       },
+       {
+        "citations": [
+         "2.2"
+        ],
+        "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve until the gauge shows zero."
+       },
+       {
+        "citations": [
+         "2.3"
+        ],
+        "text": "Ensure the sea-suction valve is closed and held, keeping a blank flange and a bilge pump ready before opening any part below the waterline."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates probable bearing wear on PUMP-08, supported by a 16.7% increase in the crest factor signal. This requires immediate verification of vibration levels and safety isolation before any corrective maintenance."
+     },
+     "attempts": 1,
+     "seconds": 61.7
+    }
+   ]
+  },
+  "PUMP-09|SENSOR_STUCK": {
+   "alert_id": "PUMP-09-A06",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Cooling-tower circulation pump CW-2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 13,
+       "title": "Instrumentation"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      }
+     ],
+     "clauses": 12
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.4",
+         "13.3"
+        ],
+        "text": "Compare the flow meter reading with an independent local gauge or hand-held instrument."
+       },
+       {
+        "citations": [
+         "13.3"
+        ],
+        "text": "Compare the bearing temperature with an infrared thermometer."
+       },
+       {
+        "citations": [
+         "13.4"
+        ],
+        "text": "If the sensor is wrong, mark it as faulty in the monitoring system."
+       },
+       {
+        "citations": [
+         "13.6"
+        ],
+        "text": "Until the sensor is repaired, read the local gauge each shift and write the value in the shift log."
+       },
+       {
+        "citations": [
+         "13.5"
+        ],
+        "text": "Recalibrate or replace the faulty sensor at the next possible time."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6",
+        "3.1"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3."
+      },
+      "summary": "The alert indicates a probable stuck sensor fault on PUMP-09, supported by the flow value of 18.428 m\u00b3/h which is -94.1% below baseline."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 23126,
+      "tokens": 266
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": false,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Compare the flow meter reading with an independent local gauge or hand-held instrument.",
+       "citations": [
+        "4.4",
+        "13.3"
+       ],
+       "supported": true,
+       "reason": "Clause 4.4 requires comparing sensor values with independent measurements before trusting other alerts.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Compare the bearing temperature with an infrared thermometer.",
+       "citations": [
+        "13.3"
+       ],
+       "supported": true,
+       "reason": "Clause 13.3 explicitly instructs to compare bearing temperature with an infrared thermometer.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "If the sensor is wrong, mark it as faulty in the monitoring system.",
+       "citations": [
+        "13.4"
+       ],
+       "supported": true,
+       "reason": "Clause 13.4 states to mark a sensor as faulty if it is wrong.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Until the sensor is repaired, read the local gauge each shift and write the value in the shift log.",
+       "citations": [
+        "13.6"
+       ],
+       "supported": true,
+       "reason": "Clause 13.6 requires reading the local gauge each shift and writing the value in the shift log.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Recalibrate or replace the faulty sensor at the next possible time.",
+       "citations": [
+        "13.5"
+       ],
+       "supported": true,
+       "reason": "Clause 13.5 instructs to recalibrate or replace a faulty sensor at the next possible time.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3.",
+       "citations": [
+        "4.6",
+        "3.1"
+       ],
+       "supported": false,
+       "reason": "Clause 4.6 supports escalation when a measured value reaches an alarm limit of section 3.",
+       "checked": true,
+       "unknown_citations": [
+        "3.1"
+       ]
+      }
+     ],
+     "code_issues": [
+      "C6 cites [3.1], which is not in the given manual sections."
+     ],
+     "feedback": "C6 cites [3.1], which is not in the given manual sections.\nC6 (Escalate if: Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3.): Clause 4.6 supports escalation when a measured value reaches an alarm limit of section 3.",
+     "meta": {
+      "cached": false,
+      "ms": 25425,
+      "tokens": 302
+     }
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.4",
+         "13.3"
+        ],
+        "text": "Compare the flow meter reading with an independent local gauge or hand-held instrument."
+       },
+       {
+        "citations": [
+         "13.3"
+        ],
+        "text": "Compare the bearing temperature with an infrared thermometer."
+       },
+       {
+        "citations": [
+         "13.4"
+        ],
+        "text": "If the sensor is wrong, mark it as faulty in the monitoring system."
+       },
+       {
+        "citations": [
+         "13.6"
+        ],
+        "text": "Until the sensor is repaired, read the local gauge each shift and write the value in the shift log."
+       },
+       {
+        "citations": [
+         "13.5"
+        ],
+        "text": "Recalibrate or replace the faulty sensor at the next possible time."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6",
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3, or when the checks confirm a fault that you cannot correct during operation."
+      },
+      "summary": "The alert indicates a probable stuck sensor fault on PUMP-09, supported by the flow value of 18.428 m\u00b3/h which is -94.1% below baseline."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 21625,
+      "tokens": 267
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Compare the flow meter reading with an independent local gauge or hand-held instrument.",
+       "citations": [
+        "4.4",
+        "13.3"
+       ],
+       "supported": true,
+       "reason": "Clause [13.3] explicitly instructs to compare the flow meter with a local gauge or hand-held instrument.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Compare the bearing temperature with an infrared thermometer.",
+       "citations": [
+        "13.3"
+       ],
+       "supported": true,
+       "reason": "Clause [13.3] explicitly instructs to compare bearing temperature with an infrared thermometer.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "If the sensor is wrong, mark it as faulty in the monitoring system.",
+       "citations": [
+        "13.4"
+       ],
+       "supported": true,
+       "reason": "Clause [13.4] states to mark a sensor as faulty if it is wrong.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Until the sensor is repaired, read the local gauge each shift and write the value in the shift log.",
+       "citations": [
+        "13.6"
+       ],
+       "supported": true,
+       "reason": "Clause [13.6] states to read the local gauge each shift and write the value in the shift log.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Recalibrate or replace the faulty sensor at the next possible time.",
+       "citations": [
+        "13.5"
+       ],
+       "supported": true,
+       "reason": "Clause [13.5] states to recalibrate or replace a faulty sensor at the next possible time.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3, or when the checks confirm a fault that you cannot correct during operation.",
+       "citations": [
+        "4.6",
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause [4.6] supports escalating to the manager and changing over to the standby pump under the stated conditions.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 26552,
+      "tokens": 316
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.4",
+         "13.3"
+        ],
+        "text": "Compare the flow meter reading with an independent local gauge or hand-held instrument."
+       },
+       {
+        "citations": [
+         "13.3"
+        ],
+        "text": "Compare the bearing temperature with an infrared thermometer."
+       },
+       {
+        "citations": [
+         "13.4"
+        ],
+        "text": "If the sensor is wrong, mark it as faulty in the monitoring system."
+       },
+       {
+        "citations": [
+         "13.6"
+        ],
+        "text": "Until the sensor is repaired, read the local gauge each shift and write the value in the shift log."
+       },
+       {
+        "citations": [
+         "13.5"
+        ],
+        "text": "Recalibrate or replace the faulty sensor at the next possible time."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6",
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3, or when the checks confirm a fault that you cannot correct during operation."
+      },
+      "summary": "The alert indicates a probable stuck sensor fault on PUMP-09, supported by the flow value of 18.428 m\u00b3/h which is -94.1% below baseline."
+     },
+     "attempts": 2,
+     "seconds": 96.7
+    }
+   ]
+  },
+  "PUMP-08|COMMUNICATION_LOSS": {
+   "alert_id": "PUMP-08-A07",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Seawater cooling pump No. 2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 14,
+       "title": "Communication and gateway"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 13,
+       "title": "Instrumentation"
+      }
+     ],
+     "clauses": 16
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3",
+         "4.4"
+        ],
+        "text": "Confirm the fault by comparing the sensor value with an independent measurement before trusting other alerts."
+       },
+       {
+        "citations": [
+         "14.2",
+         "14.3"
+        ],
+        "text": "Check the pump locally for noise, vibration, and motor current, then check the gateway power and network cable."
+       },
+       {
+        "citations": [
+         "14.4"
+        ],
+        "text": "Until data returns, read local gauges every 2 hours and record the values."
+       },
+       {
+        "citations": [
+         "13.4",
+         "13.5"
+        ],
+        "text": "If the sensor is wrong, mark it as faulty and record the before and after values for recalibration or replacement."
+       },
+       {
+        "citations": [
+         "4.5",
+         "13.6"
+        ],
+        "text": "Record each alert, the checks performed, and the results in the engine-room log."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6",
+        "3.1"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump when a measured value reaches an alarm limit of section 3 or when the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates a probable communication loss on PUMP-08, supported by the comm_loss_flag signal. Verify the sensor against an independent measurement and check the gateway before performing corrective work."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 26475,
+      "tokens": 313
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": false,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the fault by comparing the sensor value with an independent measurement before trusting other alerts.",
+       "citations": [
+        "4.3",
+        "4.4"
+       ],
+       "supported": true,
+       "reason": "Clause 4.4 requires comparing sensor values with independent measurements before trusting other alerts.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Check the pump locally for noise, vibration, and motor current, then check the gateway power and network cable.",
+       "citations": [
+        "14.2",
+        "14.3"
+       ],
+       "supported": true,
+       "reason": "Clause 14.2 lists local checks, and 14.3 lists gateway checks; the claim combines them correctly.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Until data returns, read local gauges every 2 hours and record the values.",
+       "citations": [
+        "14.4"
+       ],
+       "supported": true,
+       "reason": "Clause 14.4 explicitly states to read local gauges every 2 hours until data returns.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "If the sensor is wrong, mark it as faulty and record the before and after values for recalibration or replacement.",
+       "citations": [
+        "13.4",
+        "13.5"
+       ],
+       "supported": true,
+       "reason": "Clause 13.4 says to mark faulty sensors, and 13.5 says to record before/after values for repair.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Record each alert, the checks performed, and the results in the engine-room log.",
+       "citations": [
+        "4.5",
+        "13.6"
+       ],
+       "supported": true,
+       "reason": "Clause 4.5 requires recording alerts and checks, while 13.6 requires recording gauge values in the log.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the chief engineer and change over to the standby pump when a measured value reaches an alarm limit of section 3 or when the checks confirm a fault that cannot be corrected during operation.",
+       "citations": [
+        "4.6",
+        "3.1"
+       ],
+       "supported": false,
+       "reason": "Clause 4.6 defines escalation conditions and actions, but clause 3.1 is not cited or present.",
+       "checked": true,
+       "unknown_citations": [
+        "3.1"
+       ]
+      }
+     ],
+     "code_issues": [
+      "C6 cites [3.1], which is not in the given manual sections."
+     ],
+     "feedback": "C6 cites [3.1], which is not in the given manual sections.\nC6 (Escalate if: Call the chief engineer and change over to the standby pump when a measured value reaches an alarm limit of section 3 or when the checks confirm a fault that cannot be corrected during operation.): Clause 4.6 defines escalation conditions and actions, but clause 3.1 is not cited or present.\nFor C6, remove the citation to [3.1] as it is not in the excerpt. Use only [4.6] which contains the full escalation condition and action.",
+     "meta": {
+      "cached": false,
+      "ms": 30781,
+      "tokens": 360
+     }
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3",
+         "4.4"
+        ],
+        "text": "Confirm the fault by comparing the sensor value with an independent measurement before trusting other alerts."
+       },
+       {
+        "citations": [
+         "14.2",
+         "14.3"
+        ],
+        "text": "Check the pump locally for noise, vibration, and motor current, then check the gateway power and network cable."
+       },
+       {
+        "citations": [
+         "14.4"
+        ],
+        "text": "Until data returns, read local gauges every 2 hours and record the values."
+       },
+       {
+        "citations": [
+         "13.4",
+         "13.5"
+        ],
+        "text": "If the sensor is wrong, mark it as faulty and record the before and after values for recalibration or replacement."
+       },
+       {
+        "citations": [
+         "4.5",
+         "13.6"
+        ],
+        "text": "Record each alert, the checks performed, and the results in the engine-room log."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump when a measured value reaches an alarm limit of section 3 or when the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates a probable communication loss on PUMP-08, supported by the comm_loss_flag signal. Verify the sensor against an independent measurement and check the gateway before performing corrective work."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 24224,
+      "tokens": 295
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the fault by comparing the sensor value with an independent measurement before trusting other alerts.",
+       "citations": [
+        "4.3",
+        "4.4"
+       ],
+       "supported": true,
+       "reason": "Clause 4.4 requires comparing sensor values with independent measurements before trusting other alerts.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Check the pump locally for noise, vibration, and motor current, then check the gateway power and network cable.",
+       "citations": [
+        "14.2",
+        "14.3"
+       ],
+       "supported": true,
+       "reason": "Clause 14.2 lists local checks, and 14.3 lists gateway checks; the claim combines them correctly.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Until data returns, read local gauges every 2 hours and record the values.",
+       "citations": [
+        "14.4"
+       ],
+       "supported": true,
+       "reason": "Clause 14.4 explicitly states to read local gauges every 2 hours until data returns.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "If the sensor is wrong, mark it as faulty and record the before and after values for recalibration or replacement.",
+       "citations": [
+        "13.4",
+        "13.5"
+       ],
+       "supported": true,
+       "reason": "Clause 13.4 says to mark a faulty sensor, and 13.5 says to record before/after values for repair.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Record each alert, the checks performed, and the results in the engine-room log.",
+       "citations": [
+        "4.5",
+        "13.6"
+       ],
+       "supported": true,
+       "reason": "Clause 4.5 requires recording alerts and checks, while 13.6 adds recording local gauge values.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the chief engineer and change over to the standby pump when a measured value reaches an alarm limit of section 3 or when the checks confirm a fault that cannot be corrected during operation.",
+       "citations": [
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause 4.6 states to call the chief engineer and change over to standby under specified conditions.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 26073,
+      "tokens": 321
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3",
+         "4.4"
+        ],
+        "text": "Confirm the fault by comparing the sensor value with an independent measurement before trusting other alerts."
+       },
+       {
+        "citations": [
+         "14.2",
+         "14.3"
+        ],
+        "text": "Check the pump locally for noise, vibration, and motor current, then check the gateway power and network cable."
+       },
+       {
+        "citations": [
+         "14.4"
+        ],
+        "text": "Until data returns, read local gauges every 2 hours and record the values."
+       },
+       {
+        "citations": [
+         "13.4",
+         "13.5"
+        ],
+        "text": "If the sensor is wrong, mark it as faulty and record the before and after values for recalibration or replacement."
+       },
+       {
+        "citations": [
+         "4.5",
+         "13.6"
+        ],
+        "text": "Record each alert, the checks performed, and the results in the engine-room log."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump when a measured value reaches an alarm limit of section 3 or when the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates a probable communication loss on PUMP-08, supported by the comm_loss_flag signal. Verify the sensor against an independent measurement and check the gateway before performing corrective work."
+     },
+     "attempts": 2,
+     "seconds": 107.6
+    }
+   ]
+  },
+  "PUMP-09|DISCHARGE_RESTRICTION": {
+   "alert_id": "PUMP-09-A10",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Cooling-tower circulation pump CW-2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 7,
+       "title": "Discharge-side restriction"
+      },
+      {
+       "num": 3,
+       "title": "Operating limits"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      },
+      {
+       "num": 15,
+       "title": "Standby pump changeover"
+      }
+     ],
+     "clauses": 29
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the discharge restriction fault with checks of section 7 before doing corrective work."
+       },
+       {
+        "citations": [
+         "7.2"
+        ],
+        "text": "Check the positions of all discharge-side valves against the circuit diagram."
+       },
+       {
+        "citations": [
+         "7.3"
+        ],
+        "text": "Check the pressure difference across the process heat exchangers for a value above the exchanger data plate."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.2"
+        ],
+        "text": "Before opening the pump or heat exchanger, stop the pump, lock out the motor supply, close and lock the valves, and release the pressure to zero."
+       },
+       {
+        "citations": [
+         "7.5"
+        ],
+        "text": "After correction, make sure the flow, discharge pressure, and motor power return to normal values."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.6",
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump if the suction pressure decrease shows more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates a probable discharge restriction on PUMP-09 supported by a flow drop of -14.6% and a discharge pressure increase of +4.6%. Verify valve positions and heat exchanger fouling before performing corrective work."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 31483,
+      "tokens": 364
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": false,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the discharge restriction fault with checks of section 7 before doing corrective work.",
+       "citations": [
+        "4.3"
+       ],
+       "supported": true,
+       "reason": "Clause [4.3] states to confirm faults with checks from the applicable section before corrective work.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Check the positions of all discharge-side valves against the circuit diagram.",
+       "citations": [
+        "7.2"
+       ],
+       "supported": true,
+       "reason": "Clause [7.2] explicitly instructs to check discharge-side valve positions against the circuit diagram.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Check the pressure difference across the process heat exchangers for a value above the exchanger data plate.",
+       "citations": [
+        "7.3"
+       ],
+       "supported": true,
+       "reason": "Clause [7.3] instructs to check the pressure difference across heat exchangers for values above the data plate.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Before opening the pump or heat exchanger, stop the pump, lock out the motor supply, close and lock the valves, and release the pressure to zero.",
+       "citations": [
+        "2.1",
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clauses [2.1] and [2.2] collectively cover stopping, locking out, closing valves, and releasing pressure to zero.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "After correction, make sure the flow, discharge pressure, and motor power return to normal values.",
+       "citations": [
+        "7.5"
+       ],
+       "supported": true,
+       "reason": "Clause [7.5] states to ensure flow, discharge pressure, and motor power return to normal values after correction.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the maintenance manager and change over to the standby pump if the suction pressure decrease shows more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation.",
+       "citations": [
+        "3.6",
+        "4.6"
+       ],
+       "supported": false,
+       "reason": "Clause [4.6] supports escalation for uncorrectable faults, but [3.6] defines suction pressure limits differently than claimed.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": "C6 (Escalate if: Call the maintenance manager and change over to the standby pump if the suction pressure decrease shows more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation.): Clause [4.6] supports escalation for uncorrectable faults, but [3.6] defines suction pressure limits differently than claimed.\nClaim C6 is incorrect regarding the suction pressure limit. Clause [3.6] states a decrease of more than 15% shows a restriction, but the claim implies this triggers escalation. Clause [4.6] only triggers escalation if checks confirm an uncorrectable fault, not solely based on the [3.6] limit. To correct, remove the reference to [3.6] or clarify that escalation requires an uncorrectable fault per [4.6].",
+     "meta": {
+      "cached": false,
+      "ms": 38794,
+      "tokens": 426
+     }
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the discharge restriction fault with checks of section 7 before doing corrective work."
+       },
+       {
+        "citations": [
+         "7.2"
+        ],
+        "text": "Check the positions of all discharge-side valves against the circuit diagram."
+       },
+       {
+        "citations": [
+         "7.3"
+        ],
+        "text": "Check the pressure difference across the process heat exchangers for a value above the exchanger data plate."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.2"
+        ],
+        "text": "Before opening the pump or heat exchanger, stop the pump, lock out the motor supply, close and lock the valves, and release the pressure to zero."
+       },
+       {
+        "citations": [
+         "7.5"
+        ],
+        "text": "After correction, make sure the flow, discharge pressure, and motor power return to normal values."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when the checks confirm a fault that you cannot correct during operation."
+      },
+      "summary": "The alert indicates a probable discharge restriction on PUMP-09 supported by a flow drop of -14.6% and a discharge pressure increase of +4.6%. Verify valve positions and heat exchanger fouling before performing corrective work."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 28857,
+      "tokens": 278
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the discharge restriction fault with checks of section 7 before doing corrective work.",
+       "citations": [
+        "4.3"
+       ],
+       "supported": true,
+       "reason": "Clause [4.3] states to confirm faults with checks from the applicable section before corrective work.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Check the positions of all discharge-side valves against the circuit diagram.",
+       "citations": [
+        "7.2"
+       ],
+       "supported": true,
+       "reason": "Clause [7.2] explicitly instructs to check discharge-side valve positions against the circuit diagram.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Check the pressure difference across the process heat exchangers for a value above the exchanger data plate.",
+       "citations": [
+        "7.3"
+       ],
+       "supported": true,
+       "reason": "Clause [7.3] instructs to check the pressure difference across heat exchangers for values above the data plate.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Before opening the pump or heat exchanger, stop the pump, lock out the motor supply, close and lock the valves, and release the pressure to zero.",
+       "citations": [
+        "2.1",
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clauses [2.1] and [2.2] collectively cover stopping, locking out, closing valves, and releasing pressure to zero.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "After correction, make sure the flow, discharge pressure, and motor power return to normal values.",
+       "citations": [
+        "7.5"
+       ],
+       "supported": true,
+       "reason": "Clause [7.5] states to ensure flow, discharge pressure, and motor power return to normal values after correction.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the maintenance manager and change over to the standby pump when the checks confirm a fault that you cannot correct during operation.",
+       "citations": [
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause [4.6] supports escalating when checks confirm an uncorrectable fault, matching the claim's condition and action.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 30681,
+      "tokens": 328
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the discharge restriction fault with checks of section 7 before doing corrective work."
+       },
+       {
+        "citations": [
+         "7.2"
+        ],
+        "text": "Check the positions of all discharge-side valves against the circuit diagram."
+       },
+       {
+        "citations": [
+         "7.3"
+        ],
+        "text": "Check the pressure difference across the process heat exchangers for a value above the exchanger data plate."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.2"
+        ],
+        "text": "Before opening the pump or heat exchanger, stop the pump, lock out the motor supply, close and lock the valves, and release the pressure to zero."
+       },
+       {
+        "citations": [
+         "7.5"
+        ],
+        "text": "After correction, make sure the flow, discharge pressure, and motor power return to normal values."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when the checks confirm a fault that you cannot correct during operation."
+      },
+      "summary": "The alert indicates a probable discharge restriction on PUMP-09 supported by a flow drop of -14.6% and a discharge pressure increase of +4.6%. Verify valve positions and heat exchanger fouling before performing corrective work."
+     },
+     "attempts": 2,
+     "seconds": 129.8
+    }
+   ]
+  },
+  "PUMP-09|AIR_ENTRAINMENT": {
+   "alert_id": "PUMP-09-A13",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Cooling-tower circulation pump CW-2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 12,
+       "title": "Air entrainment and priming"
+      },
+      {
+       "num": 6,
+       "title": "Cavitation and suction conditions"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      },
+      {
+       "num": 15,
+       "title": "Standby pump changeover"
+      }
+     ],
+     "clauses": 25
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "12.3"
+        ],
+        "text": "Make sure that the basin level is above the minimum mark and that the make-up water valve operates."
+       },
+       {
+        "citations": [
+         "12.4"
+        ],
+        "text": "Vent the pump casing through the vent cock."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.2"
+        ],
+        "text": "Before opening the pump, stop it, lock out the motor supply, close and lock the suction and discharge valves, and release the pressure through the drain valve."
+       },
+       {
+        "citations": [
+         "15.1",
+         "15.2"
+        ],
+        "text": "Start the standby pump CW-1 from the local panel and wait until its discharge pressure is stable, then ensure the process cooling-water temperature stays within its limits for 5 minutes."
+       },
+       {
+        "citations": [
+         "4.5"
+        ],
+        "text": "Record the alert, the checks performed, and the result in the maintenance system."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3, or when the checks confirm a fault that you cannot correct during operation."
+      },
+      "summary": "The alert indicates probable air entrainment in PUMP-09, supported by a flow decrease of -15.9% and a suction pressure drop of -72.4% compared to the baseline."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 27804,
+      "tokens": 319
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": true,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Make sure that the basin level is above the minimum mark and that the make-up water valve operates.",
+       "citations": [
+        "12.3"
+       ],
+       "supported": true,
+       "reason": "Clause [12.3] explicitly states to ensure the basin level is above the minimum mark and the make-up water valve operates.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Vent the pump casing through the vent cock.",
+       "citations": [
+        "12.4"
+       ],
+       "supported": true,
+       "reason": "Clause [12.4] instructs to vent the pump casing through the vent cock.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Before opening the pump, stop it, lock out the motor supply, close and lock the suction and discharge valves, and release the pressure through the drain valve.",
+       "citations": [
+        "2.1",
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clauses [2.1] and [2.2] collectively describe stopping, locking out, closing valves, and releasing pressure.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Start the standby pump CW-1 from the local panel and wait until its discharge pressure is stable, then ensure the process cooling-water temperature stays within its limits for 5 minutes.",
+       "citations": [
+        "15.1",
+        "15.2"
+       ],
+       "supported": true,
+       "reason": "Clauses [15.1] and [15.2] describe starting the standby pump, waiting for stable pressure, and checking temperature limits.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Record the alert, the checks performed, and the result in the maintenance system.",
+       "citations": [
+        "4.5"
+       ],
+       "supported": true,
+       "reason": "Clause [4.5] requires recording the alert, checks performed, and the result in the maintenance system.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3, or when the checks confirm a fault that you cannot correct during operation.",
+       "citations": [
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause [4.6] supports escalating when a measured value reaches an alarm limit or a fault cannot be corrected.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": null,
+     "meta": {
+      "cached": false,
+      "ms": 27162,
+      "tokens": 334
+     }
+    },
+    {
+     "stage": "final",
+     "status": "accepted",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "12.3"
+        ],
+        "text": "Make sure that the basin level is above the minimum mark and that the make-up water valve operates."
+       },
+       {
+        "citations": [
+         "12.4"
+        ],
+        "text": "Vent the pump casing through the vent cock."
+       },
+       {
+        "citations": [
+         "2.1",
+         "2.2"
+        ],
+        "text": "Before opening the pump, stop it, lock out the motor supply, close and lock the suction and discharge valves, and release the pressure through the drain valve."
+       },
+       {
+        "citations": [
+         "15.1",
+         "15.2"
+        ],
+        "text": "Start the standby pump CW-1 from the local panel and wait until its discharge pressure is stable, then ensure the process cooling-water temperature stays within its limits for 5 minutes."
+       },
+       {
+        "citations": [
+         "4.5"
+        ],
+        "text": "Record the alert, the checks performed, and the result in the maintenance system."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "4.6"
+       ],
+       "text": "Call the maintenance manager and change over to the standby pump when a measured value reaches an alarm limit of section 3, or when the checks confirm a fault that you cannot correct during operation."
+      },
+      "summary": "The alert indicates probable air entrainment in PUMP-09, supported by a flow decrease of -15.9% and a suction pressure drop of -72.4% compared to the baseline."
+     },
+     "attempts": 1,
+     "seconds": 55.0
+    }
+   ]
+  }
+ },
+ "test": {
+  "PUMP-08|BEARING_WEAR": {
+   "alert_id": "PUMP-08-A02",
+   "events": [
+    {
+     "stage": "manual",
+     "document": "Seawater cooling pump No. 2 and drive motor \u2014 Operation and maintenance manual",
+     "sections": [
+      {
+       "num": 8,
+       "title": "Bearings"
+      },
+      {
+       "num": 3,
+       "title": "Operating limits"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      }
+     ],
+     "clauses": 26
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 1,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "8.7"
+        ],
+        "text": "Confirm the probable bearing wear fault with checks from section 8 before doing corrective work."
+       },
+       {
+        "citations": [
+         "8.3"
+        ],
+        "text": "Measure the vibration velocity and acceleration on both bearing housings with a hand-held meter."
+       },
+       {
+        "citations": [
+         "2.1"
+        ],
+        "text": "Stop the pump and lock out the motor supply at the main switchboard, attaching a personal lock and tag."
+       },
+       {
+        "citations": [
+         "2.2"
+        ],
+        "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve until the gauge shows zero."
+       },
+       {
+        "citations": [
+         "2.3"
+        ],
+        "text": "Ensure the sea-suction valve is closed and held, keeping a blank flange and a bilge pump ready before opening any part below the waterline."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates probable bearing wear on PUMP-08, supported by a 16.7% increase in the crest factor signal. This requires immediate verification of vibration levels and safety isolation before any corrective maintenance."
+     },
+     "meta": {
+      "cached": true,
+      "ms": 0
+     },
+     "test_note": "Test: the citation of action 1 was changed from [4.3] to [8.7]."
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 1,
+     "status": "done",
+     "accepted": false,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the probable bearing wear fault with checks from section 8 before doing corrective work.",
+       "citations": [
+        "8.7"
+       ],
+       "supported": false,
+       "reason": "Clause [8.7] describes post-replacement testing, not the pre-work checks required by [4.3].",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Measure the vibration velocity and acceleration on both bearing housings with a hand-held meter.",
+       "citations": [
+        "8.3"
+       ],
+       "supported": true,
+       "reason": "Clause [8.3] explicitly instructs to measure vibration velocity and acceleration on both bearing housings.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Stop the pump and lock out the motor supply at the main switchboard, attaching a personal lock and tag.",
+       "citations": [
+        "2.1"
+       ],
+       "supported": true,
+       "reason": "Clause [2.1] states to stop the pump, lock out the motor, and attach a personal lock and tag.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve until the gauge shows zero.",
+       "citations": [
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clause [2.2] states to close/lock valves, release pressure via drain, and ensure the gauge shows zero.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Ensure the sea-suction valve is closed and held, keeping a blank flange and a bilge pump ready before opening any part below the waterline.",
+       "citations": [
+        "2.3"
+       ],
+       "supported": true,
+       "reason": "Clause [2.3] states to ensure the sea-suction valve is closed and held, with a blank flange and bilge pump ready.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation.",
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "supported": true,
+       "reason": "Clause [3.4] defines the 15% suction pressure limit, and [4.6] defines the escalation action for uncorrectable faults.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": "C1 (Confirm the probable bearing wear fault with checks from section 8 before doing corrective work.): Clause [8.7] describes post-replacement testing, not the pre-work checks required by [4.3].\nC1 is not supported because clause [8.7] refers to post-replacement testing, not the checks required before corrective work. Use clause [4.3] to confirm the fault before doing corrective work.",
+     "meta": {
+      "cached": false,
+      "ms": 31745,
+      "tokens": 384
+     }
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "draft",
+     "attempt": 2,
+     "status": "done",
+     "guide": {
+      "actions": [
+       {
+        "citations": [
+         "4.3"
+        ],
+        "text": "Confirm the probable bearing wear fault with checks from the applicable section before doing corrective work."
+       },
+       {
+        "citations": [
+         "8.3"
+        ],
+        "text": "Measure the vibration velocity and acceleration on both bearing housings with a hand-held meter."
+       },
+       {
+        "citations": [
+         "2.1"
+        ],
+        "text": "Stop the pump and lock out the motor supply at the main switchboard, attaching a personal lock and tag."
+       },
+       {
+        "citations": [
+         "2.2"
+        ],
+        "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve until the gauge shows zero."
+       },
+       {
+        "citations": [
+         "2.3"
+        ],
+        "text": "Ensure the sea-suction valve is closed and held, keeping a blank flange and a bilge pump ready before opening any part below the waterline."
+       }
+      ],
+      "escalate_if": {
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "text": "Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation."
+      },
+      "summary": "The alert indicates probable bearing wear on PUMP-08, supported by a 16.7% increase in the crest factor signal. This requires immediate verification of vibration levels and safety isolation before any corrective maintenance."
+     },
+     "meta": {
+      "cached": false,
+      "ms": 24607,
+      "tokens": 298
+     },
+     "test_note": null
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "running"
+    },
+    {
+     "stage": "verify",
+     "attempt": 2,
+     "status": "done",
+     "accepted": false,
+     "checks": [
+      {
+       "id": "C1",
+       "text": "Confirm the probable bearing wear fault with checks from the applicable section before doing corrective work.",
+       "citations": [
+        "4.3"
+       ],
+       "supported": true,
+       "reason": "Clause [4.3] states to confirm the fault with applicable section checks before corrective work.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C2",
+       "text": "Measure the vibration velocity and acceleration on both bearing housings with a hand-held meter.",
+       "citations": [
+        "8.3"
+       ],
+       "supported": true,
+       "reason": "Clause [8.3] instructs to measure vibration velocity and acceleration on both bearing housings with a hand-held meter.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C3",
+       "text": "Stop the pump and lock out the motor supply at the main switchboard, attaching a personal lock and tag.",
+       "citations": [
+        "2.1"
+       ],
+       "supported": true,
+       "reason": "Clause [2.1] requires stopping the pump, locking out the motor, and attaching a personal lock and tag.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C4",
+       "text": "Close and lock the suction and discharge valves, then release the pressure through the drain valve until the gauge shows zero.",
+       "citations": [
+        "2.2"
+       ],
+       "supported": true,
+       "reason": "Clause [2.2] requires closing/locking valves, releasing pressure via drain, and ensuring the gauge shows zero.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C5",
+       "text": "Ensure the sea-suction valve is closed and held, keeping a blank flange and a bilge pump ready before opening any part below the waterline.",
+       "citations": [
+        "2.3"
+       ],
+       "supported": true,
+       "reason": "Clause [2.3] requires the sea-suction valve to be closed and held, with a blank flange and bilge pump ready.",
+       "checked": true,
+       "unknown_citations": []
+      },
+      {
+       "id": "C6",
+       "text": "Escalate if: Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation.",
+       "citations": [
+        "3.4",
+        "4.6"
+       ],
+       "supported": false,
+       "reason": "Clause [4.6] supports escalation for alarm limits or uncorrectable faults, but [3.4] specifies a 15% decrease limit, not a general rule.",
+       "checked": true,
+       "unknown_citations": []
+      }
+     ],
+     "code_issues": [],
+     "feedback": "C6 (Escalate if: Call the chief engineer and change over to the standby pump if the suction pressure decreases by more than 15% from the normal value or if the checks confirm a fault that cannot be corrected during operation.): Clause [4.6] supports escalation for alarm limits or uncorrectable faults, but [3.4] specifies a 15% decrease limit, not a general rule.\nClaim C6 is not fully supported because clause [3.4] specifies a 15% decrease limit for suction pressure, whereas the claim implies this is a general condition for escalation. Use clause [4.6] for the escalation action and clause [3.4] for the specific suction pressure limit.",
+     "meta": {
+      "cached": false,
+      "ms": 33206,
+      "tokens": 404
+     }
+    },
+    {
+     "stage": "fallback",
+     "status": "running"
+    },
+    {
+     "stage": "final",
+     "status": "fallback",
+     "summary": "Pump PUMP-08 shows a probable BEARING_WEAR fault with a 0.98 probability, supported by a 16.7% increase in the crest factor and an 8.6% rise in vibration acceleration. Measured values deviating significantly from the baseline include suction pressure (-17.5%), discharge pressure (-4.4%), motor power (-2.1%), vibration velocity (-7.2%), fluid temperature (-10.9%), and ambient temperature (+1.2%). Note: The system also indicates a 1.00 probability for SUCTION_STRAINER_CLOGGING, but no advice is provided as per system constraints.",
+     "attempts": 2,
+     "sections": [
+      {
+       "num": 8,
+       "title": "Bearings"
+      },
+      {
+       "num": 3,
+       "title": "Operating limits"
+      },
+      {
+       "num": 4,
+       "title": "Condition monitoring and alerts"
+      },
+      {
+       "num": 2,
+       "title": "Safety"
+      }
+     ],
+     "meta": {
+      "cached": false,
+      "ms": 13014,
+      "tokens": 148
+     },
+     "seconds": 102.6
+    }
+   ]
+  }
+ },
+ "questions": {
+  "PUMP-09|MISALIGNMENT": [
+   {
+    "q": "What are the alignment limits?",
+    "a": "The permitted parallel offset is 0.05 mm. The permitted angular offset is 0.05 mm per 100 mm. [9.3]"
+   },
+   {
+    "q": "Which vibration direction shows misalignment?",
+    "a": "A high axial vibration supports misalignment [9.2]. You must measure vibration in the horizontal, vertical, and axial directions to confirm [4.3]."
+   },
+   {
+    "q": "What torque do the foundation bolts need?",
+    "a": "The foundation bolts require a torque of 120 N\u00b7m [9.4]."
+   }
+  ],
+  "PUMP-09|IMBALANCE": [
+   {
+    "q": "What causes imbalance?",
+    "a": "Scale or deposits on the impeller, a damaged vane, or a loose part on the shaft can cause imbalance [10.2]."
+   },
+   {
+    "q": "To which grade do I balance the impeller?",
+    "a": "You must balance the impeller to grade G6.3 [10.3]."
+   },
+   {
+    "q": "Must I stop the pump now?",
+    "a": "No, you do not need to stop the pump immediately. You must first confirm the imbalance fault by checking the applicable sections before doing any corrective work [4.3]. If the suction pressure decrease exceeds 15%, you should escalate to the maintenance manager and switch to the standby pump [3.6]. If the fault is confirmed and requires repair, you must stop the pump and lock out the motor supply before opening it [2.1]."
+   }
+  ],
+  "PUMP-08|SUCTION_STRAINER_CLOGGING": [
+   {
+    "q": "Can I clean the strainer while the pump runs?",
+    "a": "Yes, you can clean the strainer on PUMP-08 while the pump runs.\nFollow section 5.4 to change over to the clean basket using the changeover lever.\nThen isolate, drain, and open the clogged side as described in sections 2.1 through 2.3.\nEnsure the suction pressure returns to normal values after cleaning [5.6].\nIf the strainer clogs again within 24 hours, check the sea chest grating for debris [5.7]."
+   },
+   {
+    "q": "When must I clean the strainer?",
+    "a": "You must clean the strainer on PUMP-08 if the suction pressure is more than 15% below the normal value at the same speed [5.3]. You should also clean it if the pressure difference across the strainer exceeds 20 kPa [5.3]."
+   },
+   {
+    "q": "What do I check after I clean the strainer?",
+    "a": "After cleaning the strainer on PUMP-08, you must verify that the suction pressure and the pump speed return to their normal values [5.6]. If the strainer clogs again within 24 hours, you should examine the sea chest grating for marine growth or debris [5.7]."
+   }
+  ],
+  "PUMP-08|BEARING_WEAR": [
+   {
+    "q": "Which grease do I use, and how much?",
+    "a": "Use 25 g of lithium-complex grease for each bearing. Apply this every 2000 running hours. Do not over-grease, as it increases the temperature. [8.4]"
+   },
+   {
+    "q": "When must I replace the bearings?",
+    "a": "You must plan a bearing replacement for PUMP-08 if the vibration velocity exceeds the alarm limit of 5.0 mm/s [3.1]. You must also plan replacement if the bearing temperature increases by more than 10 \u00b0C above the normal value [8.5]."
+   },
+   {
+    "q": "What do I check after a bearing replacement?",
+    "a": "After replacing the bearings on PUMP-08, you must run the pump for 2 hours. During this time, record the vibration and the bearing temperature to verify the repair. Ensure the alignment is correct before starting this test, as misalignment can cause vibration at one and two times the running speed. If the vibration velocity exceeds the alarm limit or the temperature rises significantly, you may need to plan another replacement."
+   }
+  ],
+  "PUMP-09|SENSOR_STUCK": [
+   {
+    "q": "How do I check the sensor?",
+    "a": "To check the sensor, compare the flow meter reading with an independent local gauge or hand-held instrument [4.4]. You can also compare the bearing temperature with an infrared thermometer [13.3]. If the sensor is wrong, mark it as faulty in the monitoring system [13.4]. Until the sensor is repaired, read the local gauge each shift and write the value in the shift log [13.6]."
+   },
+   {
+    "q": "Can I disable the trip of this sensor?",
+    "a": "No, you cannot disable the trip without permission. [13.4] You must get permission from the maintenance manager before disabling any trip that uses this sensor."
+   },
+   {
+    "q": "What do I do until the sensor is repaired?",
+    "a": "Until the sensor is repaired, read the local gauge each shift and write the value in the shift log [13.6].\nIf the measured value reaches an alarm limit of section 3, call the maintenance manager and change over to the standby pump [4.6].\nIf the checks confirm a fault you cannot correct during operation, also call the maintenance manager and change over to the standby pump [4.6]."
+   }
+  ],
+  "PUMP-08|COMMUNICATION_LOSS": [
+   {
+    "q": "Does this alert mean that the pump has a fault?",
+    "a": "No, this alert does not confirm that PUMP-08 has a fault. [4.3]\nThe system indicates a probable communication loss, which means the sensor data is missing. [4.4]\nYou must verify the fault by comparing sensor values with independent local measurements. [14.2]\nIf the sensor is faulty, you should mark it as such and record the values. [13.4]\nOnly escalate if local checks confirm a real fault or if values reach alarm limits. [4.6]"
+   },
+   {
+    "q": "What do I check at the pump?",
+    "a": "Check the pump locally for noise, vibration, and motor current [14.2].\nVerify the sensor value against an independent measurement before trusting other alerts [4.4].\nIf the sensor is faulty, mark it as faulty and record before and after values [13.4].\nRead local gauges every 2 hours and record the values until data returns [14.4].\nEscalate to the chief engineer if a measured value reaches an alarm limit or a fault cannot be corrected [4.6]."
+   },
+   {
+    "q": "How do I restart the gateway?",
+    "a": "To restart the gateway, check its status light; if it is red, restart the gateway. [14.3]"
+   }
+  ],
+  "PUMP-09|DISCHARGE_RESTRICTION": [
+   {
+    "q": "Which valves do I check?",
+    "a": "You must check the positions of all discharge-side valves against the circuit diagram [7.2].\nVerify these valves before performing any corrective work [4.3].\nDo not change a valve position unless you know why it is in that position [7.2]."
+   },
+   {
+    "q": "What is the minimum flow?",
+    "a": "The minimum flow for normal operation is 100 m\u00b3/h [3.5]. Do not operate below this value for more than 10 minutes."
+   },
+   {
+    "q": "When do I change over to the standby pump?",
+    "a": "You must change over to the standby pump if the checks confirm a fault you cannot correct during operation [4.6].\nYou should also change over if any measured value reaches an alarm limit defined in Section 3 [4.6].\nTo perform the changeover, start the standby pump CW-1 and wait for stable discharge pressure [15.1].\nEnsure the process cooling-water temperature remains within limits for 5 minutes before stopping PUMP-09 [15.2].\nFinally, isolate PUMP-09 for work after the changeover is complete [15.3]."
+   }
+  ],
+  "PUMP-09|AIR_ENTRAINMENT": [
+   {
+    "q": "How do I vent the pump?",
+    "a": "To vent the pump casing, open the vent cock [12.4]. Before doing this, you must stop the pump, lock out the motor supply, close and lock the suction and discharge valves, and release the pressure through the drain valve [2.1], [2.2]. Ensure the pressure gauge shows zero before opening the vent cock [2.2]."
+   },
+   {
+    "q": "What causes air in the water?",
+    "a": "Air in the water can be caused by a low basin level creating a vortex at the outlet, a leak in the suction pipe, or a foam problem in the basin [12.2]."
+   },
+   {
+    "q": "What do I do if the pump loses its prime?",
+    "a": "If the pump loses its prime, stop the pump and start the standby pump CW-1. [12.4]"
+   }
+  ]
+ },
+ "made": "2026-11-07T19:23:25Z"
+}

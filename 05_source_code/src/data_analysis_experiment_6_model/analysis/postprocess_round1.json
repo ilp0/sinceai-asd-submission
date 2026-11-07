@@ -1,0 +1,233 @@
+{
+ "runs/rp-6h-r32-v1/predictions/val_step02000.parquet": {
+  "default": {
+   "composite_score": 52.47920411771096,
+   "event_f1": 0.525,
+   "event_recall": 0.875,
+   "alert_precision": 0.375,
+   "false_alerts_per_asset_day": 0.7142857142857143,
+   "timeliness": 0.7796149677903097,
+   "fault_type_recall": 0.25,
+   "class_recall": 0.5833333333333334,
+   "events_scored": 24,
+   "true_positive_events": 21,
+   "false_alert_episodes": 12,
+   "excess_repeat_episodes": 23
+  },
+  "selected": {
+   "point": {
+    "threshold": 0.85,
+    "persistence_windows": 10,
+    "smooth_windows": 15,
+    "global_gap_minutes": 5,
+    "cooldown_minutes": 720,
+    "disable_weak": true
+   },
+   "disabled": [
+    "CAVITATION",
+    "DISCHARGE_RESTRICTION",
+    "IMPELLER_WEAR",
+    "SENSOR_STUCK",
+    "SENSOR_NOISE_SPIKES"
+   ],
+   "composite_score": 65.81008051456794,
+   "event_f1": 0.7755102040816326,
+   "event_recall": 0.7916666666666666,
+   "alert_precision": 0.76,
+   "false_alerts_per_asset_day": 0.12244897959183673,
+   "timeliness": 0.6306400801501661,
+   "fault_type_recall": 0.4166666666666667,
+   "class_recall": 0.625,
+   "events_scored": 24,
+   "true_positive_events": 19,
+   "false_alert_episodes": 6,
+   "excess_repeat_episodes": 0
+  },
+  "lopo_cv": {
+   "composite_score": 47.45864027659415,
+   "event_f1": 0.5599999999999999,
+   "event_recall": 0.5833333333333334,
+   "alert_precision": 0.5384615384615384,
+   "false_alerts_per_asset_day": 0.24489795918367346,
+   "timeliness": 0.4854065036256259,
+   "fault_type_recall": 0.20833333333333334,
+   "class_recall": 0.4166666666666667,
+   "events_scored": 24,
+   "true_positive_events": 14,
+   "false_alert_episodes": 5,
+   "excess_repeat_episodes": 7
+  },
+  "lopo_folds": [
+   {
+    "held_out": "val-new-45001/GEN-val6-45001-01",
+    "point": {
+     "threshold": 0.9,
+     "persistence_windows": 10,
+     "smooth_windows": 15,
+     "global_gap_minutes": 720,
+     "cooldown_minutes": 720,
+     "disable_weak": false
+    },
+    "disabled": [],
+    "selection_composite": 63.44
+   },
+   {
+    "held_out": "val-new-45001/GEN-val6-45001-02",
+    "point": {
+     "threshold": 0.93,
+     "persistence_windows": 3,
+     "smooth_windows": 15,
+     "global_gap_minutes": 5,
+     "cooldown_minutes": 720,
+     "disable_weak": true
+    },
+    "disabled": [
+     "CAVITATION",
+     "DISCHARGE_RESTRICTION",
+     "IMBALANCE",
+     "IMPELLER_WEAR",
+     "SENSOR_STUCK",
+     "SENSOR_NOISE_SPIKES"
+    ],
+    "selection_composite": 69.13
+   },
+   {
+    "held_out": "val-new-45001/GEN-val6-45001-03",
+    "point": {
+     "threshold": 0.85,
+     "persistence_windows": 10,
+     "smooth_windows": 15,
+     "global_gap_minutes": 5,
+     "cooldown_minutes": 720,
+     "disable_weak": true
+    },
+    "disabled": [
+     "CAVITATION",
+     "DISCHARGE_RESTRICTION",
+     "IMPELLER_WEAR",
+     "SENSOR_STUCK",
+     "SENSOR_NOISE_SPIKES"
+    ],
+    "selection_composite": 66.3
+   },
+   {
+    "held_out": "val-new-45001/GEN-val6-45001-04",
+    "point": {
+     "threshold": 0.85,
+     "persistence_windows": 10,
+     "smooth_windows": 15,
+     "global_gap_minutes": 5,
+     "cooldown_minutes": 720,
+     "disable_weak": true
+    },
+    "disabled": [
+     "CAVITATION",
+     "DISCHARGE_RESTRICTION",
+     "IMPELLER_WEAR",
+     "SENSOR_DRIFT",
+     "SENSOR_STUCK",
+     "SENSOR_NOISE_SPIKES"
+    ],
+    "selection_composite": 60.43
+   },
+   {
+    "held_out": "val-new-45001/GEN-val6-45001-05",
+    "point": {
+     "threshold": 0.85,
+     "persistence_windows": 3,
+     "smooth_windows": 1,
+     "global_gap_minutes": 120,
+     "cooldown_minutes": 720,
+     "disable_weak": true
+    },
+    "disabled": [
+     "CAVITATION",
+     "DISCHARGE_RESTRICTION",
+     "IMPELLER_WEAR",
+     "SENSOR_STUCK",
+     "SENSOR_CALIBRATION_SHIFT",
+     "SENSOR_NOISE_SPIKES"
+    ],
+    "selection_composite": 69.25
+   },
+   {
+    "held_out": "val-orig/PUMP-08",
+    "point": {
+     "threshold": 0.9,
+     "persistence_windows": 3,
+     "smooth_windows": 15,
+     "global_gap_minutes": 5,
+     "cooldown_minutes": 720,
+     "disable_weak": false
+    },
+    "disabled": [],
+    "selection_composite": 68.69
+   },
+   {
+    "held_out": "val-orig/PUMP-09",
+    "point": {
+     "threshold": 0.85,
+     "persistence_windows": 10,
+     "smooth_windows": 15,
+     "global_gap_minutes": 5,
+     "cooldown_minutes": 720,
+     "disable_weak": true
+    },
+    "disabled": [
+     "CAVITATION",
+     "DISCHARGE_RESTRICTION",
+     "IMPELLER_WEAR",
+     "AIR_ENTRAINMENT",
+     "SENSOR_STUCK",
+     "SENSOR_NOISE_SPIKES"
+    ],
+    "selection_composite": 65.21
+   }
+  ],
+  "val_orig": {
+   "default": {
+    "composite_score": 42.8185501708552,
+    "event_f1": 0.4444444444444444,
+    "event_recall": 0.6666666666666666,
+    "alert_precision": 0.3333333333333333,
+    "false_alerts_per_asset_day": 0.8571428571428571,
+    "timeliness": 0.632991000606252,
+    "fault_type_recall": 0.2222222222222222,
+    "class_recall": 0.3333333333333333,
+    "events_scored": 9,
+    "true_positive_events": 6,
+    "false_alert_episodes": 4,
+    "excess_repeat_episodes": 8
+   },
+   "selected": {
+    "composite_score": 65.0026005494452,
+    "event_f1": 0.75,
+    "event_recall": 0.6666666666666666,
+    "alert_precision": 0.8571428571428571,
+    "false_alerts_per_asset_day": 0.07142857142857142,
+    "timeliness": 0.6221538369960695,
+    "fault_type_recall": 0.4444444444444444,
+    "class_recall": 0.5555555555555556,
+    "events_scored": 9,
+    "true_positive_events": 6,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 0
+   },
+   "lopo_cv": {
+    "composite_score": 43.44380220343695,
+    "event_f1": 0.43478260869565216,
+    "event_recall": 0.5555555555555556,
+    "alert_precision": 0.35714285714285715,
+    "false_alerts_per_asset_day": 0.6428571428571429,
+    "timeliness": 0.4331459417798532,
+    "fault_type_recall": 0.3333333333333333,
+    "class_recall": 0.4444444444444444,
+    "events_scored": 9,
+    "true_positive_events": 5,
+    "false_alert_episodes": 3,
+    "excess_repeat_episodes": 6
+   }
+  },
+  "grid_size": 288
+ }
+}

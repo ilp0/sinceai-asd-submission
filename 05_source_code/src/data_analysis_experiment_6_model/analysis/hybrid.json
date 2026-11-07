@@ -1,0 +1,839 @@
+{
+ "runs/rp3-6h-r32-v1/predictions/val_step02750.parquet": {
+  "model_only": {
+   "all7": {
+    "composite_score": 60.37901904501164,
+    "event_f1": 0.5205479452054794,
+    "event_recall": 0.7916666666666666,
+    "alert_precision": 0.3877551020408163,
+    "false_alerts_per_asset_day": 0.6122448979591837,
+    "timeliness": 0.7610532726307886,
+    "fault_type_recall": 0.5,
+    "class_recall": 0.75,
+    "events_scored": 24,
+    "true_positive_events": 19,
+    "false_alert_episodes": 2,
+    "excess_repeat_episodes": 28
+   },
+   "08/09": {
+    "composite_score": 68.80434782608695,
+    "event_f1": 0.6086956521739131,
+    "event_recall": 0.7777777777777778,
+    "alert_precision": 0.5,
+    "false_alerts_per_asset_day": 0.5,
+    "timeliness": 0.7777777777777778,
+    "fault_type_recall": 0.6666666666666666,
+    "class_recall": 0.7777777777777778,
+    "events_scored": 9,
+    "true_positive_events": 7,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 6
+   }
+  },
+  "b1_only": {
+   "all7": {
+    "composite_score": 65.03658977239479,
+    "event_f1": 0.7727272727272727,
+    "event_recall": 0.7083333333333334,
+    "alert_precision": 0.85,
+    "false_alerts_per_asset_day": 0.061224489795918366,
+    "timeliness": 0.6127795504626586,
+    "fault_type_recall": 0.375,
+    "class_recall": 0.6666666666666666,
+    "events_scored": 24,
+    "true_positive_events": 17,
+    "false_alert_episodes": 2,
+    "excess_repeat_episodes": 1
+   },
+   "08/09": {
+    "composite_score": 78.20163446972408,
+    "event_f1": 0.9411764705882353,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 1.0,
+    "false_alerts_per_asset_day": 0.0,
+    "timeliness": 0.7630228999567925,
+    "fault_type_recall": 0.4444444444444444,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 0
+   }
+  },
+  "sensor_b1": {
+   "all7": {
+    "composite_score": 64.42952046602693,
+    "event_f1": 0.5384615384615385,
+    "event_recall": 0.875,
+    "alert_precision": 0.3888888888888889,
+    "false_alerts_per_asset_day": 0.673469387755102,
+    "timeliness": 0.8017023445990962,
+    "fault_type_recall": 0.5833333333333334,
+    "class_recall": 0.8333333333333334,
+    "events_scored": 24,
+    "true_positive_events": 21,
+    "false_alert_episodes": 3,
+    "excess_repeat_episodes": 30
+   },
+   "08/09": {
+    "composite_score": 73.65396825396826,
+    "event_f1": 0.64,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 0.5,
+    "false_alerts_per_asset_day": 0.5714285714285714,
+    "timeliness": 0.7888888888888889,
+    "fault_type_recall": 0.7777777777777778,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 7
+   },
+   "route": {
+    "BEARING_WEAR": "model",
+    "SUCTION_STRAINER_CLOGGING": "model",
+    "CAVITATION": "model",
+    "DISCHARGE_RESTRICTION": "model",
+    "MISALIGNMENT": "model",
+    "IMBALANCE": "model",
+    "IMPELLER_WEAR": "model",
+    "AIR_ENTRAINMENT": "model",
+    "SENSOR_DRIFT": "b1",
+    "SENSOR_STUCK": "b1",
+    "SENSOR_CALIBRATION_SHIFT": "b1",
+    "SENSOR_NOISE_SPIKES": "b1",
+    "COMMUNICATION_LOSS": "b1",
+    "UNKNOWN": "b1"
+   }
+  },
+  "selected": {
+   "all7": {
+    "composite_score": 77.63684116275088,
+    "event_f1": 0.8636363636363635,
+    "event_recall": 0.7916666666666666,
+    "alert_precision": 0.95,
+    "false_alerts_per_asset_day": 0.02040816326530612,
+    "timeliness": 0.698497129256901,
+    "fault_type_recall": 0.625,
+    "class_recall": 0.7916666666666666,
+    "events_scored": 24,
+    "true_positive_events": 19,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 1
+   },
+   "08/09": {
+    "composite_score": 85.28138526264712,
+    "event_f1": 0.9411764705882353,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 1.0,
+    "false_alerts_per_asset_day": 0.0,
+    "timeliness": 0.7003437729362775,
+    "fault_type_recall": 0.7777777777777778,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 0
+   },
+   "threshold": 0.98,
+   "route": {
+    "BEARING_WEAR": "b1",
+    "SUCTION_STRAINER_CLOGGING": "model",
+    "CAVITATION": "model",
+    "DISCHARGE_RESTRICTION": "b1",
+    "MISALIGNMENT": "model",
+    "IMBALANCE": "b1",
+    "IMPELLER_WEAR": "b1",
+    "AIR_ENTRAINMENT": "model",
+    "SENSOR_DRIFT": "model",
+    "SENSOR_STUCK": "b1",
+    "SENSOR_CALIBRATION_SHIFT": "b1",
+    "SENSOR_NOISE_SPIKES": "model",
+    "COMMUNICATION_LOSS": "b1",
+    "UNKNOWN": "model"
+   }
+  },
+  "lopo_cv": {
+   "all7": {
+    "composite_score": 63.64316295900896,
+    "event_f1": 0.6956521739130435,
+    "event_recall": 0.6666666666666666,
+    "alert_precision": 0.7272727272727273,
+    "false_alerts_per_asset_day": 0.12244897959183673,
+    "timeliness": 0.5891290885005808,
+    "fault_type_recall": 0.4583333333333333,
+    "class_recall": 0.6666666666666666,
+    "events_scored": 24,
+    "true_positive_events": 16,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 6
+   },
+   "08/09": {
+    "composite_score": 58.30328163047286,
+    "event_f1": 0.6666666666666667,
+    "event_recall": 0.5555555555555556,
+    "alert_precision": 0.8333333333333334,
+    "false_alerts_per_asset_day": 0.07142857142857142,
+    "timeliness": 0.4330212243807858,
+    "fault_type_recall": 0.4444444444444444,
+    "class_recall": 0.5555555555555556,
+    "events_scored": 9,
+    "true_positive_events": 5,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 1
+   },
+   "folds": [
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-01",
+     "threshold": 0.9,
+     "selection_composite": 76.56,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "MISALIGNMENT",
+      "SENSOR_CALIBRATION_SHIFT"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-02",
+     "threshold": 0.98,
+     "selection_composite": 80.14,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-03",
+     "threshold": 0.98,
+     "selection_composite": 76.72,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-04",
+     "threshold": 0.98,
+     "selection_composite": 78.15,
+     "b1_classes": [
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_DRIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-05",
+     "threshold": 0.98,
+     "selection_composite": 82.47,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-orig/PUMP-08",
+     "threshold": 0.98,
+     "selection_composite": 77.71,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-orig/PUMP-09",
+     "threshold": 0.95,
+     "selection_composite": 75.13,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMPELLER_WEAR",
+      "MISALIGNMENT",
+      "SENSOR_DRIFT"
+     ]
+    }
+   ]
+  }
+ },
+ "runs/rp3-3h-r32-v1/predictions/val_step03000.parquet": {
+  "model_only": {
+   "all7": {
+    "composite_score": 66.5391363460991,
+    "event_f1": 0.6551724137931034,
+    "event_recall": 0.7916666666666666,
+    "alert_precision": 0.5588235294117647,
+    "false_alerts_per_asset_day": 0.30612244897959184,
+    "timeliness": 0.704852372078589,
+    "fault_type_recall": 0.5416666666666666,
+    "class_recall": 0.75,
+    "events_scored": 24,
+    "true_positive_events": 19,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 15
+   },
+   "08/09": {
+    "composite_score": 63.99206349206349,
+    "event_f1": 0.6666666666666666,
+    "event_recall": 0.7777777777777778,
+    "alert_precision": 0.5833333333333334,
+    "false_alerts_per_asset_day": 0.35714285714285715,
+    "timeliness": 0.6777777777777777,
+    "fault_type_recall": 0.4444444444444444,
+    "class_recall": 0.7777777777777778,
+    "events_scored": 9,
+    "true_positive_events": 7,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 5
+   }
+  },
+  "b1_only": {
+   "all7": {
+    "composite_score": 65.03658977239479,
+    "event_f1": 0.7727272727272727,
+    "event_recall": 0.7083333333333334,
+    "alert_precision": 0.85,
+    "false_alerts_per_asset_day": 0.061224489795918366,
+    "timeliness": 0.6127795504626586,
+    "fault_type_recall": 0.375,
+    "class_recall": 0.6666666666666666,
+    "events_scored": 24,
+    "true_positive_events": 17,
+    "false_alert_episodes": 2,
+    "excess_repeat_episodes": 1
+   },
+   "08/09": {
+    "composite_score": 78.20163446972408,
+    "event_f1": 0.9411764705882353,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 1.0,
+    "false_alerts_per_asset_day": 0.0,
+    "timeliness": 0.7630228999567925,
+    "fault_type_recall": 0.4444444444444444,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 0
+   }
+  },
+  "sensor_b1": {
+   "all7": {
+    "composite_score": 63.61909419230509,
+    "event_f1": 0.5757575757575758,
+    "event_recall": 0.7916666666666666,
+    "alert_precision": 0.4523809523809524,
+    "false_alerts_per_asset_day": 0.46938775510204084,
+    "timeliness": 0.7178092241483404,
+    "fault_type_recall": 0.5416666666666666,
+    "class_recall": 0.7916666666666666,
+    "events_scored": 24,
+    "true_positive_events": 19,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 22
+   },
+   "08/09": {
+    "composite_score": 70.76052449965493,
+    "event_f1": 0.6956521739130435,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 0.5714285714285714,
+    "false_alerts_per_asset_day": 0.42857142857142855,
+    "timeliness": 0.7888888888888889,
+    "fault_type_recall": 0.5555555555555556,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 6
+   },
+   "route": {
+    "BEARING_WEAR": "model",
+    "SUCTION_STRAINER_CLOGGING": "model",
+    "CAVITATION": "model",
+    "DISCHARGE_RESTRICTION": "model",
+    "MISALIGNMENT": "model",
+    "IMBALANCE": "model",
+    "IMPELLER_WEAR": "model",
+    "AIR_ENTRAINMENT": "model",
+    "SENSOR_DRIFT": "b1",
+    "SENSOR_STUCK": "b1",
+    "SENSOR_CALIBRATION_SHIFT": "b1",
+    "SENSOR_NOISE_SPIKES": "b1",
+    "COMMUNICATION_LOSS": "b1",
+    "UNKNOWN": "b1"
+   }
+  },
+  "selected": {
+   "all7": {
+    "composite_score": 79.11254063047566,
+    "event_f1": 0.9166666666666666,
+    "event_recall": 0.9166666666666666,
+    "alert_precision": 0.9166666666666666,
+    "false_alerts_per_asset_day": 0.04081632653061224,
+    "timeliness": 0.7679144464897693,
+    "fault_type_recall": 0.5416666666666666,
+    "class_recall": 0.8333333333333334,
+    "events_scored": 24,
+    "true_positive_events": 22,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 2
+   },
+   "08/09": {
+    "composite_score": 74.71961807051775,
+    "event_f1": 0.9473684210526316,
+    "event_recall": 1.0,
+    "alert_precision": 0.9,
+    "false_alerts_per_asset_day": 0.07142857142857142,
+    "timeliness": 0.7348321984298143,
+    "fault_type_recall": 0.3333333333333333,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 9,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 1
+   },
+   "threshold": 0.9,
+   "route": {
+    "BEARING_WEAR": "b1",
+    "SUCTION_STRAINER_CLOGGING": "model",
+    "CAVITATION": "model",
+    "DISCHARGE_RESTRICTION": "b1",
+    "MISALIGNMENT": "b1",
+    "IMBALANCE": "both",
+    "IMPELLER_WEAR": "model",
+    "AIR_ENTRAINMENT": "model",
+    "SENSOR_DRIFT": "model",
+    "SENSOR_STUCK": "b1",
+    "SENSOR_CALIBRATION_SHIFT": "both",
+    "SENSOR_NOISE_SPIKES": "model",
+    "COMMUNICATION_LOSS": "b1",
+    "UNKNOWN": "model"
+   }
+  },
+  "lopo_cv": {
+   "all7": {
+    "composite_score": 67.55216648081579,
+    "event_f1": 0.7999999999999999,
+    "event_recall": 0.75,
+    "alert_precision": 0.8571428571428571,
+    "false_alerts_per_asset_day": 0.061224489795918366,
+    "timeliness": 0.6387477798231026,
+    "fault_type_recall": 0.4166666666666667,
+    "class_recall": 0.6666666666666666,
+    "events_scored": 24,
+    "true_positive_events": 18,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 3
+   },
+   "08/09": {
+    "composite_score": 57.03394555589787,
+    "event_f1": 0.75,
+    "event_recall": 0.6666666666666666,
+    "alert_precision": 0.8571428571428571,
+    "false_alerts_per_asset_day": 0.07142857142857142,
+    "timeliness": 0.5014988650964809,
+    "fault_type_recall": 0.2222222222222222,
+    "class_recall": 0.5555555555555556,
+    "events_scored": 9,
+    "true_positive_events": 6,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 1
+   },
+   "folds": [
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-01",
+     "threshold": 0.9,
+     "selection_composite": 77.43,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-02",
+     "threshold": 0.9,
+     "selection_composite": 82.46,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-03",
+     "threshold": 0.9,
+     "selection_composite": 78.82,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "MISALIGNMENT",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-04",
+     "threshold": 0.9,
+     "selection_composite": 75.9,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "MISALIGNMENT",
+      "SENSOR_CALIBRATION_SHIFT"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-05",
+     "threshold": 0.9,
+     "selection_composite": 80.63,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "MISALIGNMENT",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-orig/PUMP-08",
+     "threshold": 0.9,
+     "selection_composite": 79.43,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "MISALIGNMENT",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-orig/PUMP-09",
+     "threshold": 0.9,
+     "selection_composite": 81.82,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "MISALIGNMENT",
+      "SENSOR_STUCK"
+     ]
+    }
+   ]
+  }
+ },
+ "runs/rp3-12h-r32-v1/predictions/val_step02000.parquet": {
+  "model_only": {
+   "all7": {
+    "composite_score": 65.91812836652353,
+    "event_f1": 0.5675675675675675,
+    "event_recall": 0.875,
+    "alert_precision": 0.42,
+    "false_alerts_per_asset_day": 0.5918367346938775,
+    "timeliness": 0.8256223587564028,
+    "fault_type_recall": 0.5833333333333334,
+    "class_recall": 0.7916666666666666,
+    "events_scored": 24,
+    "true_positive_events": 21,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 28
+   },
+   "08/09": {
+    "composite_score": 73.98219579780287,
+    "event_f1": 0.64,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 0.5,
+    "false_alerts_per_asset_day": 0.5714285714285714,
+    "timeliness": 0.8053002660806196,
+    "fault_type_recall": 0.7777777777777778,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 7
+   }
+  },
+  "b1_only": {
+   "all7": {
+    "composite_score": 65.03658977239479,
+    "event_f1": 0.7727272727272727,
+    "event_recall": 0.7083333333333334,
+    "alert_precision": 0.85,
+    "false_alerts_per_asset_day": 0.061224489795918366,
+    "timeliness": 0.6127795504626586,
+    "fault_type_recall": 0.375,
+    "class_recall": 0.6666666666666666,
+    "events_scored": 24,
+    "true_positive_events": 17,
+    "false_alert_episodes": 2,
+    "excess_repeat_episodes": 1
+   },
+   "08/09": {
+    "composite_score": 78.20163446972408,
+    "event_f1": 0.9411764705882353,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 1.0,
+    "false_alerts_per_asset_day": 0.0,
+    "timeliness": 0.7630228999567925,
+    "fault_type_recall": 0.4444444444444444,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 0
+   }
+  },
+  "sensor_b1": {
+   "all7": {
+    "composite_score": 63.23282042759908,
+    "event_f1": 0.525,
+    "event_recall": 0.875,
+    "alert_precision": 0.375,
+    "false_alerts_per_asset_day": 0.7142857142857143,
+    "timeliness": 0.7964624499513828,
+    "fault_type_recall": 0.5833333333333334,
+    "class_recall": 0.7916666666666666,
+    "events_scored": 24,
+    "true_positive_events": 21,
+    "false_alert_episodes": 2,
+    "excess_repeat_episodes": 33
+   },
+   "08/09": {
+    "composite_score": 74.92925744621715,
+    "event_f1": 0.6666666666666667,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 0.5333333333333333,
+    "false_alerts_per_asset_day": 0.5,
+    "timeliness": 0.788129538977524,
+    "fault_type_recall": 0.7777777777777778,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 6
+   },
+   "route": {
+    "BEARING_WEAR": "model",
+    "SUCTION_STRAINER_CLOGGING": "model",
+    "CAVITATION": "model",
+    "DISCHARGE_RESTRICTION": "model",
+    "MISALIGNMENT": "model",
+    "IMBALANCE": "model",
+    "IMPELLER_WEAR": "model",
+    "AIR_ENTRAINMENT": "model",
+    "SENSOR_DRIFT": "b1",
+    "SENSOR_STUCK": "b1",
+    "SENSOR_CALIBRATION_SHIFT": "b1",
+    "SENSOR_NOISE_SPIKES": "b1",
+    "COMMUNICATION_LOSS": "b1",
+    "UNKNOWN": "b1"
+   }
+  },
+  "selected": {
+   "all7": {
+    "composite_score": 78.96555807237134,
+    "event_f1": 0.8148148148148148,
+    "event_recall": 0.9166666666666666,
+    "alert_precision": 0.7333333333333333,
+    "false_alerts_per_asset_day": 0.16326530612244897,
+    "timeliness": 0.8131683042232533,
+    "fault_type_recall": 0.6666666666666666,
+    "class_recall": 0.8333333333333334,
+    "events_scored": 24,
+    "true_positive_events": 22,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 7
+   },
+   "08/09": {
+    "composite_score": 82.37630254724384,
+    "event_f1": 0.761904761904762,
+    "event_recall": 0.8888888888888888,
+    "alert_precision": 0.6666666666666666,
+    "false_alerts_per_asset_day": 0.2857142857142857,
+    "timeliness": 0.8013548099018742,
+    "fault_type_recall": 0.8888888888888888,
+    "class_recall": 0.8888888888888888,
+    "events_scored": 9,
+    "true_positive_events": 8,
+    "false_alert_episodes": 1,
+    "excess_repeat_episodes": 3
+   },
+   "threshold": 0.95,
+   "route": {
+    "BEARING_WEAR": "model",
+    "SUCTION_STRAINER_CLOGGING": "model",
+    "CAVITATION": "model",
+    "DISCHARGE_RESTRICTION": "b1",
+    "MISALIGNMENT": "model",
+    "IMBALANCE": "model",
+    "IMPELLER_WEAR": "b1",
+    "AIR_ENTRAINMENT": "model",
+    "SENSOR_DRIFT": "model",
+    "SENSOR_STUCK": "b1",
+    "SENSOR_CALIBRATION_SHIFT": "b1",
+    "SENSOR_NOISE_SPIKES": "model",
+    "COMMUNICATION_LOSS": "b1",
+    "UNKNOWN": "model"
+   }
+  },
+  "lopo_cv": {
+   "all7": {
+    "composite_score": 63.59388675466819,
+    "event_f1": 0.679245283018868,
+    "event_recall": 0.75,
+    "alert_precision": 0.6206896551724138,
+    "false_alerts_per_asset_day": 0.22448979591836735,
+    "timeliness": 0.6617208747633158,
+    "fault_type_recall": 0.4583333333333333,
+    "class_recall": 0.625,
+    "events_scored": 24,
+    "true_positive_events": 18,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 11
+   },
+   "08/09": {
+    "composite_score": 68.33563124024253,
+    "event_f1": 0.7000000000000001,
+    "event_recall": 0.7777777777777778,
+    "alert_precision": 0.6363636363636364,
+    "false_alerts_per_asset_day": 0.2857142857142857,
+    "timeliness": 0.5965434667740317,
+    "fault_type_recall": 0.6666666666666666,
+    "class_recall": 0.6666666666666666,
+    "events_scored": 9,
+    "true_positive_events": 7,
+    "false_alert_episodes": 0,
+    "excess_repeat_episodes": 4
+   },
+   "folds": [
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-01",
+     "threshold": 0.95,
+     "selection_composite": 82.43,
+     "b1_classes": [
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMPELLER_WEAR",
+      "SENSOR_STUCK",
+      "SUCTION_STRAINER_CLOGGING"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-02",
+     "threshold": 0.9,
+     "selection_composite": 84.08,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-03",
+     "threshold": 0.95,
+     "selection_composite": 78.26,
+     "b1_classes": [
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-04",
+     "threshold": 0.9,
+     "selection_composite": 76.71,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMBALANCE",
+      "IMPELLER_WEAR",
+      "MISALIGNMENT",
+      "SENSOR_CALIBRATION_SHIFT"
+     ]
+    },
+    {
+     "held_out": "val-new-45001/GEN-val6-45001-05",
+     "threshold": 0.98,
+     "selection_composite": 82.87,
+     "b1_classes": [
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-orig/PUMP-08",
+     "threshold": 0.95,
+     "selection_composite": 80.11,
+     "b1_classes": [
+      "DISCHARGE_RESTRICTION",
+      "IMPELLER_WEAR",
+      "SENSOR_CALIBRATION_SHIFT",
+      "SENSOR_STUCK"
+     ]
+    },
+    {
+     "held_out": "val-orig/PUMP-09",
+     "threshold": 0.9,
+     "selection_composite": 77.23,
+     "b1_classes": [
+      "BEARING_WEAR",
+      "COMMUNICATION_LOSS",
+      "DISCHARGE_RESTRICTION",
+      "IMPELLER_WEAR",
+      "MISALIGNMENT",
+      "SENSOR_CALIBRATION_SHIFT"
+     ]
+    }
+   ]
+  }
+ }
+}

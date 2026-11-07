@@ -1,0 +1,4 @@
+.venv/
+predictions/
+logs/
+__pycache__/

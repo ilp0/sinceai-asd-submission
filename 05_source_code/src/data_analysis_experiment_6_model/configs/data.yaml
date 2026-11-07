@@ -1,0 +1,34 @@
+# Experiment 6 data: the layout written by make_data.py (data/ is git-ignored; rebuild it with make_data.py).
+#   training:   data/training/original (PUMP-01..07) + data/training/new/train-<seed> (20 exp-4 train pumps)
+#   validation: data/validation/original (PUMP-08, PUMP-09) + data/validation/new/45001 (5 new pumps, never trained on)
+# Every run config inherits this file: `inherit: data.yaml`. base.yaml is the experiment-5 base config, copied here.
+# Asset keys: "train-orig/PUMP-01", "train-new-<set>-<seed>/<asset_id>", "val-orig/PUMP-08", "val-new-45001/<asset_id>".
+inherit: base.yaml
+
+data:
+  sources:
+    - name: train-orig
+      root: data/training/original
+      events: [events_train.csv]
+      benign: [benign_windows_train_validation.csv]
+    - name: train-new
+      root_glob: data/training/new/*
+      assets: public/assets.csv
+      telemetry: public/telemetry
+      # Stress items: all labels in private/ (the public file is a 30 % subset). Healthy items have no events file.
+      events: [private/events_stress_all.csv, public/events_train.csv]
+      benign: [public/benign_windows_train_validation.csv, public/benign_windows_stress.csv]
+    - name: val-orig
+      root: data/validation/original
+      events: [events_validation.csv]
+      benign: [benign_windows_train_validation.csv]
+    - name: val-new
+      root_glob: data/validation/new/4*
+      assets: public/assets.csv
+      telemetry: public/telemetry
+      events: [public/events_train.csv]
+      benign: [public/benign_windows_train_validation.csv]
+  train_assets: ["train-orig/*", "train-new-*/*"]
+  val_assets: ["val-orig/*", "val-new-*/*"]
+  locked_assets: ["*/PUMP-10", "*/PUMP-11", "*/PUMP-12", "gen-test*/*", "*test-44*/*"]
+  train_stride_s: 120

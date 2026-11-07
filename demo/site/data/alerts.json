@@ -1,0 +1,2969 @@
+[
+ {
+  "id": "PUMP-09-A01",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-10T06:20:10Z",
+  "minute": 1820,
+  "event_class": "MACHINE",
+  "fault_type": "MISALIGNMENT",
+  "confidence": 0.9959,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.645
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.129
+   },
+   {
+    "fault_type": "BEARING_WEAR",
+    "p": 0.043
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.656,
+    "baseline": 310.773,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 13.226,
+    "baseline": 16.17,
+    "delta_pct": -18.2
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 337.033,
+    "baseline": 339.898,
+    "delta_pct": -0.8
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 66.794,
+    "baseline": 64.423,
+    "delta_pct": 3.7
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 37.035,
+    "baseline": 36.725,
+    "delta_pct": 0.8
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 2.175,
+    "baseline": 1.266,
+    "delta_pct": 71.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.161,
+    "baseline": 0.162,
+    "delta_pct": -0.6
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.206,
+    "baseline": 3.2,
+    "delta_pct": 0.2
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 23.983,
+    "baseline": 40.917,
+    "delta_pct": -41.4
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 32.82,
+    "baseline": 73.65,
+    "delta_pct": -55.4
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 9.043,
+    "baseline": 9.945,
+    "delta_pct": -9.1
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 24.783,
+    "baseline": 24.283,
+    "delta_pct": 2.1
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A02",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-10T18:20:10Z",
+  "minute": 2540,
+  "event_class": "MACHINE",
+  "fault_type": "MISALIGNMENT",
+  "confidence": 1.0,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.354
+   },
+   {
+    "fault_type": "BEARING_WEAR",
+    "p": 0.013
+   },
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.001
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.896,
+    "baseline": 310.773,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 15.59,
+    "baseline": 16.17,
+    "delta_pct": -3.6
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 339.32,
+    "baseline": 339.898,
+    "delta_pct": -0.2
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 67.233,
+    "baseline": 64.423,
+    "delta_pct": 4.4
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 37.072,
+    "baseline": 36.725,
+    "delta_pct": 0.9
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 2.224,
+    "baseline": 1.266,
+    "delta_pct": 75.7
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.169,
+    "baseline": 0.162,
+    "delta_pct": 4.3
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.197,
+    "baseline": 3.2,
+    "delta_pct": -0.1
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 46.039,
+    "baseline": 40.917,
+    "delta_pct": 12.5
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 76.297,
+    "baseline": 73.65,
+    "delta_pct": 3.6
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 12.877,
+    "baseline": 9.945,
+    "delta_pct": 29.5
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 26.333,
+    "baseline": 24.283,
+    "delta_pct": 8.4
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A03",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-11T05:17:30Z",
+  "minute": 3197,
+  "event_class": "MACHINE",
+  "fault_type": "IMBALANCE",
+  "confidence": 0.991,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "MISALIGNMENT",
+    "p": 0.999
+   },
+   {
+    "fault_type": "BEARING_WEAR",
+    "p": 0.026
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.001
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.871,
+    "baseline": 310.773,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 13.866,
+    "baseline": 16.17,
+    "delta_pct": -14.2
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 337.667,
+    "baseline": 339.898,
+    "delta_pct": -0.7
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 68.41,
+    "baseline": 64.423,
+    "delta_pct": 6.2
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 37.109,
+    "baseline": 36.725,
+    "delta_pct": 1.0
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 2.338,
+    "baseline": 1.266,
+    "delta_pct": 84.7
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.167,
+    "baseline": 0.162,
+    "delta_pct": 3.1
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.198,
+    "baseline": 3.2,
+    "delta_pct": -0.1
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 41.32,
+    "baseline": 40.917,
+    "delta_pct": 1.0
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 71.843,
+    "baseline": 73.65,
+    "delta_pct": -2.5
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 7.328,
+    "baseline": 9.945,
+    "delta_pct": -26.3
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 21.915,
+    "baseline": 24.283,
+    "delta_pct": -9.8
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A01",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-10T05:49:00Z",
+  "minute": 3229,
+  "event_class": "MACHINE",
+  "fault_type": "SUCTION_STRAINER_CLOGGING",
+  "confidence": 0.9945,
+  "evidence_signal": "suction_pressure_kpa",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_STUCK",
+    "p": 0.02
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 38.389,
+    "baseline": 42.012,
+    "delta_pct": -8.6
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 129.932,
+    "baseline": 132.55,
+    "delta_pct": -2.0
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.187,
+    "baseline": 1082.183,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 46.433,
+    "baseline": 46.013,
+    "delta_pct": 0.9
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 12.952,
+    "baseline": 13.103,
+    "delta_pct": -1.2
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.783,
+    "baseline": 0.74,
+    "delta_pct": 5.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.079,
+    "baseline": 0.081,
+    "delta_pct": -2.5
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.377,
+    "baseline": 3.21,
+    "delta_pct": 5.2
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 37.125,
+    "baseline": 37.5,
+    "delta_pct": -1.0
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 13.41,
+    "baseline": 15.263,
+    "delta_pct": -12.1
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 37.565,
+    "baseline": 37.15,
+    "delta_pct": 1.1
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A04",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-11T06:20:10Z",
+  "minute": 3260,
+  "event_class": "MACHINE",
+  "fault_type": "MISALIGNMENT",
+  "confidence": 0.9992,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.963
+   },
+   {
+    "fault_type": "BEARING_WEAR",
+    "p": 0.052
+   },
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.001
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.856,
+    "baseline": 310.773,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 14.478,
+    "baseline": 16.17,
+    "delta_pct": -10.5
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 338.348,
+    "baseline": 339.898,
+    "delta_pct": -0.5
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 68.397,
+    "baseline": 64.423,
+    "delta_pct": 6.2
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 37.099,
+    "baseline": 36.725,
+    "delta_pct": 1.0
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 2.301,
+    "baseline": 1.266,
+    "delta_pct": 81.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.174,
+    "baseline": 0.162,
+    "delta_pct": 7.4
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.199,
+    "baseline": 3.2,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 42.397,
+    "baseline": 40.917,
+    "delta_pct": 3.6
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 73.087,
+    "baseline": 73.65,
+    "delta_pct": -0.8
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 8.344,
+    "baseline": 9.945,
+    "delta_pct": -16.1
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 24.145,
+    "baseline": 24.283,
+    "delta_pct": -0.6
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A02",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-10T16:04:10Z",
+  "minute": 3844,
+  "event_class": "MACHINE",
+  "fault_type": "BEARING_WEAR",
+  "confidence": 0.9803,
+  "evidence_signal": "vibration_crest_factor",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.998
+   },
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.043
+   },
+   {
+    "fault_type": "SENSOR_STUCK",
+    "p": 0.005
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 34.649,
+    "baseline": 42.012,
+    "delta_pct": -17.5
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 126.667,
+    "baseline": 132.55,
+    "delta_pct": -4.4
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.185,
+    "baseline": 1082.183,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 45.817,
+    "baseline": 46.013,
+    "delta_pct": -0.4
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 12.834,
+    "baseline": 13.103,
+    "delta_pct": -2.1
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.687,
+    "baseline": 0.74,
+    "delta_pct": -7.2
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.088,
+    "baseline": 0.081,
+    "delta_pct": 8.6
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.747,
+    "baseline": 3.21,
+    "delta_pct": 16.7
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 37.25,
+    "baseline": 37.5,
+    "delta_pct": -0.7
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 13.604,
+    "baseline": 15.263,
+    "delta_pct": -10.9
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 37.606,
+    "baseline": 37.15,
+    "delta_pct": 1.2
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A03",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-10T17:49:00Z",
+  "minute": 3949,
+  "event_class": "MACHINE",
+  "fault_type": "SUCTION_STRAINER_CLOGGING",
+  "confidence": 0.9997,
+  "evidence_signal": "suction_pressure_kpa",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "BEARING_WEAR",
+    "p": 0.997
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.046
+   },
+   {
+    "fault_type": "AIR_ENTRAINMENT",
+    "p": 0.045
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 34.17,
+    "baseline": 42.012,
+    "delta_pct": -18.7
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 126.481,
+    "baseline": 132.55,
+    "delta_pct": -4.6
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.213,
+    "baseline": 1082.183,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 46.293,
+    "baseline": 46.013,
+    "delta_pct": 0.6
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 12.794,
+    "baseline": 13.103,
+    "delta_pct": -2.4
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.697,
+    "baseline": 0.74,
+    "delta_pct": -5.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.083,
+    "baseline": 0.081,
+    "delta_pct": 2.5
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.787,
+    "baseline": 3.21,
+    "delta_pct": 18.0
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 37.0,
+    "baseline": 37.5,
+    "delta_pct": -1.3
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 14.173,
+    "baseline": 15.263,
+    "delta_pct": -7.1
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 37.441,
+    "baseline": 37.15,
+    "delta_pct": 0.8
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A05",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-11T18:20:10Z",
+  "minute": 3980,
+  "event_class": "MACHINE",
+  "fault_type": "MISALIGNMENT",
+  "confidence": 1.0,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.284
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.001
+   },
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.001
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.74,
+    "baseline": 310.773,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 13.191,
+    "baseline": 16.17,
+    "delta_pct": -18.4
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 336.924,
+    "baseline": 339.898,
+    "delta_pct": -0.9
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 64.01,
+    "baseline": 64.423,
+    "delta_pct": -0.6
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 37.096,
+    "baseline": 36.725,
+    "delta_pct": 1.0
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 2.249,
+    "baseline": 1.266,
+    "delta_pct": 77.6
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.167,
+    "baseline": 0.162,
+    "delta_pct": 3.1
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.205,
+    "baseline": 3.2,
+    "delta_pct": 0.2
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 45.558,
+    "baseline": 40.917,
+    "delta_pct": 11.3
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 75.696,
+    "baseline": 73.65,
+    "delta_pct": 2.8
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 11.532,
+    "baseline": 9.945,
+    "delta_pct": 16.0
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 25.509,
+    "baseline": 24.283,
+    "delta_pct": 5.0
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A06",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-11T22:49:50Z",
+  "minute": 4249,
+  "event_class": "SENSOR",
+  "fault_type": "SENSOR_STUCK",
+  "confidence": 0.9533,
+  "evidence_signal": "flow_m3_h",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "MISALIGNMENT",
+    "p": 1.0
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.584
+   },
+   {
+    "fault_type": "IMPELLER_WEAR",
+    "p": 0.213
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 18.428,
+    "baseline": 310.773,
+    "delta_pct": -94.1
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 22.471,
+    "baseline": 16.17,
+    "delta_pct": 39.0
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 35.962,
+    "baseline": 339.898,
+    "delta_pct": -89.4
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 3.561,
+    "baseline": 64.423,
+    "delta_pct": -94.5
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 1.971,
+    "baseline": 36.725,
+    "delta_pct": -94.6
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.162,
+    "baseline": 1.266,
+    "delta_pct": -87.2
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.012,
+    "baseline": 0.162,
+    "delta_pct": -92.6
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.221,
+    "baseline": 3.2,
+    "delta_pct": 0.7
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 44.5,
+    "baseline": 40.917,
+    "delta_pct": 8.8
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 67.223,
+    "baseline": 73.65,
+    "delta_pct": -8.7
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 6.886,
+    "baseline": 9.945,
+    "delta_pct": -30.8
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 22.862,
+    "baseline": 24.283,
+    "delta_pct": -5.9
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A04",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-11T04:04:10Z",
+  "minute": 4564,
+  "event_class": "MACHINE",
+  "fault_type": "BEARING_WEAR",
+  "confidence": 0.9994,
+  "evidence_signal": "vibration_crest_factor",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 1.0
+   },
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.013
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.002
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 31.017,
+    "baseline": 42.012,
+    "delta_pct": -26.2
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 124.102,
+    "baseline": 132.55,
+    "delta_pct": -6.4
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.314,
+    "baseline": 1082.183,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 45.683,
+    "baseline": 46.013,
+    "delta_pct": -0.7
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 12.654,
+    "baseline": 13.103,
+    "delta_pct": -3.4
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.74,
+    "baseline": 0.74,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.082,
+    "baseline": 0.081,
+    "delta_pct": 1.2
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 4.483,
+    "baseline": 3.21,
+    "delta_pct": 39.7
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 36.25,
+    "baseline": 37.5,
+    "delta_pct": -3.3
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 13.141,
+    "baseline": 15.263,
+    "delta_pct": -13.9
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 36.826,
+    "baseline": 37.15,
+    "delta_pct": -0.9
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A05",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-11T05:49:00Z",
+  "minute": 4669,
+  "event_class": "MACHINE",
+  "fault_type": "SUCTION_STRAINER_CLOGGING",
+  "confidence": 0.9996,
+  "evidence_signal": "suction_pressure_kpa",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "BEARING_WEAR",
+    "p": 1.0
+   },
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.002
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 31.01,
+    "baseline": 42.012,
+    "delta_pct": -26.2
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 124.42,
+    "baseline": 132.55,
+    "delta_pct": -6.1
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.291,
+    "baseline": 1082.183,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 45.76,
+    "baseline": 46.013,
+    "delta_pct": -0.5
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 12.613,
+    "baseline": 13.103,
+    "delta_pct": -3.7
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.72,
+    "baseline": 0.74,
+    "delta_pct": -2.7
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.082,
+    "baseline": 0.081,
+    "delta_pct": 1.2
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 4.47,
+    "baseline": 3.21,
+    "delta_pct": 39.3
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 37.125,
+    "baseline": 37.5,
+    "delta_pct": -1.0
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 14.135,
+    "baseline": 15.263,
+    "delta_pct": -7.4
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 37.105,
+    "baseline": 37.15,
+    "delta_pct": -0.1
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A07",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-12T06:20:10Z",
+  "minute": 4700,
+  "event_class": "MACHINE",
+  "fault_type": "MISALIGNMENT",
+  "confidence": 1.0,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.228
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.001
+   },
+   {
+    "fault_type": "IMPELLER_WEAR",
+    "p": 0.001
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.787,
+    "baseline": 310.773,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 12.613,
+    "baseline": 16.17,
+    "delta_pct": -22.0
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 336.323,
+    "baseline": 339.898,
+    "delta_pct": -1.1
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 64.923,
+    "baseline": 64.423,
+    "delta_pct": 0.8
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 37.123,
+    "baseline": 36.725,
+    "delta_pct": 1.1
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 2.471,
+    "baseline": 1.266,
+    "delta_pct": 95.2
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.174,
+    "baseline": 0.162,
+    "delta_pct": 7.4
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.199,
+    "baseline": 3.2,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 44.5,
+    "baseline": 40.917,
+    "delta_pct": 8.8
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 72.58,
+    "baseline": 73.65,
+    "delta_pct": -1.5
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 10.068,
+    "baseline": 9.945,
+    "delta_pct": 1.2
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 22.931,
+    "baseline": 24.283,
+    "delta_pct": -5.6
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A06",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-11T16:04:10Z",
+  "minute": 5284,
+  "event_class": "MACHINE",
+  "fault_type": "BEARING_WEAR",
+  "confidence": 0.9998,
+  "evidence_signal": "vibration_crest_factor",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.029
+   },
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.013
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.004
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 43.302,
+    "baseline": 42.012,
+    "delta_pct": 3.1
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 133.929,
+    "baseline": 132.55,
+    "delta_pct": 1.0
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.158,
+    "baseline": 1082.183,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 46.327,
+    "baseline": 46.013,
+    "delta_pct": 0.7
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 13.112,
+    "baseline": 13.103,
+    "delta_pct": 0.1
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.827,
+    "baseline": 0.74,
+    "delta_pct": 11.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.075,
+    "baseline": 0.081,
+    "delta_pct": -7.4
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 4.713,
+    "baseline": 3.21,
+    "delta_pct": 46.8
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 37.0,
+    "baseline": 37.5,
+    "delta_pct": -1.3
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 13.754,
+    "baseline": 15.263,
+    "delta_pct": -9.9
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 37.44,
+    "baseline": 37.15,
+    "delta_pct": 0.8
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A08",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-12T18:20:10Z",
+  "minute": 5420,
+  "event_class": "MACHINE",
+  "fault_type": "MISALIGNMENT",
+  "confidence": 1.0,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.131
+   },
+   {
+    "fault_type": "SENSOR_STUCK",
+    "p": 0.004
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.001
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.828,
+    "baseline": 310.773,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 12.529,
+    "baseline": 16.17,
+    "delta_pct": -22.5
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 336.37,
+    "baseline": 339.898,
+    "delta_pct": -1.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 64.988,
+    "baseline": 64.423,
+    "delta_pct": 0.9
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 37.127,
+    "baseline": 36.725,
+    "delta_pct": 1.1
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 2.466,
+    "baseline": 1.266,
+    "delta_pct": 94.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.173,
+    "baseline": 0.162,
+    "delta_pct": 6.8
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.198,
+    "baseline": 3.2,
+    "delta_pct": -0.1
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 44.5,
+    "baseline": 40.917,
+    "delta_pct": 8.8
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 77.537,
+    "baseline": 73.65,
+    "delta_pct": 5.3
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 13.019,
+    "baseline": 9.945,
+    "delta_pct": 30.9
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 26.503,
+    "baseline": 24.283,
+    "delta_pct": 9.1
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A09",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-13T09:04:10Z",
+  "minute": 6304,
+  "event_class": "MACHINE",
+  "fault_type": "MISALIGNMENT",
+  "confidence": 0.9891,
+  "evidence_signal": "vibration_rms_mm_s",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.1
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.007
+   },
+   {
+    "fault_type": "IMPELLER_WEAR",
+    "p": 0.006
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 310.804,
+    "baseline": 310.773,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 14.237,
+    "baseline": 16.17,
+    "delta_pct": -12.0
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 337.942,
+    "baseline": 339.898,
+    "delta_pct": -0.6
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 63.836,
+    "baseline": 64.423,
+    "delta_pct": -0.9
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 36.719,
+    "baseline": 36.725,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 1.305,
+    "baseline": 1.266,
+    "delta_pct": 3.1
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.156,
+    "baseline": 0.162,
+    "delta_pct": -3.7
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.2,
+    "baseline": 3.2,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 42.5,
+    "baseline": 40.917,
+    "delta_pct": 3.9
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 74.963,
+    "baseline": 73.65,
+    "delta_pct": 1.8
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 11.562,
+    "baseline": 9.945,
+    "delta_pct": 16.3
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 26.177,
+    "baseline": 24.283,
+    "delta_pct": 7.8
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A07",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-13T00:07:00Z",
+  "minute": 7207,
+  "event_class": "SENSOR",
+  "fault_type": "COMMUNICATION_LOSS",
+  "confidence": 0.996,
+  "evidence_signal": "comm_loss_flag",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.261
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.178
+   },
+   {
+    "fault_type": "DISCHARGE_RESTRICTION",
+    "p": 0.165
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": null,
+    "baseline": 42.012,
+    "delta_pct": null
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": null,
+    "baseline": 132.55,
+    "delta_pct": null
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": null,
+    "baseline": 1082.183,
+    "delta_pct": null
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": null,
+    "baseline": 46.013,
+    "delta_pct": null
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": null,
+    "baseline": 13.103,
+    "delta_pct": null
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": null,
+    "baseline": 0.74,
+    "delta_pct": null
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": null,
+    "baseline": 0.081,
+    "delta_pct": null
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": null,
+    "baseline": 3.21,
+    "delta_pct": null
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": null,
+    "baseline": 37.5,
+    "delta_pct": null
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": null,
+    "baseline": 15.263,
+    "delta_pct": null
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": null,
+    "baseline": 37.15,
+    "delta_pct": null
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A10",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-14T03:48:10Z",
+  "minute": 7428,
+  "event_class": "MACHINE",
+  "fault_type": "DISCHARGE_RESTRICTION",
+  "confidence": 0.984,
+  "evidence_signal": "flow_m3_h",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.716
+   },
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.005
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.002
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 265.299,
+    "baseline": 310.773,
+    "delta_pct": -14.6
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 15.288,
+    "baseline": 16.17,
+    "delta_pct": -5.5
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 355.572,
+    "baseline": 339.898,
+    "delta_pct": 4.6
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 59.823,
+    "baseline": 64.423,
+    "delta_pct": -7.1
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 33.902,
+    "baseline": 36.725,
+    "delta_pct": -7.7
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 1.237,
+    "baseline": 1.266,
+    "delta_pct": -2.3
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.166,
+    "baseline": 0.162,
+    "delta_pct": 2.5
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.203,
+    "baseline": 3.2,
+    "delta_pct": 0.1
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 38.286,
+    "baseline": 40.917,
+    "delta_pct": -6.4
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 66.572,
+    "baseline": 73.65,
+    "delta_pct": -9.6
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 7.333,
+    "baseline": 9.945,
+    "delta_pct": -26.3
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 22.471,
+    "baseline": 24.283,
+    "delta_pct": -7.5
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A08",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-13T04:53:40Z",
+  "minute": 7493,
+  "event_class": "MACHINE",
+  "fault_type": "BEARING_WEAR",
+  "confidence": 0.9994,
+  "evidence_signal": "vibration_crest_factor",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.169
+   },
+   {
+    "fault_type": "MISALIGNMENT",
+    "p": 0.084
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.006
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 44.667,
+    "baseline": 42.012,
+    "delta_pct": 6.3
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 135.094,
+    "baseline": 132.55,
+    "delta_pct": 1.9
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.181,
+    "baseline": 1082.183,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 45.88,
+    "baseline": 46.013,
+    "delta_pct": -0.3
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 13.117,
+    "baseline": 13.103,
+    "delta_pct": 0.1
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.763,
+    "baseline": 0.74,
+    "delta_pct": 3.1
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.123,
+    "baseline": 0.081,
+    "delta_pct": 51.9
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 6.302,
+    "baseline": 3.21,
+    "delta_pct": 96.3
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 31.333,
+    "baseline": 37.5,
+    "delta_pct": -16.4
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 15.053,
+    "baseline": 15.263,
+    "delta_pct": -1.4
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 36.67,
+    "baseline": 37.15,
+    "delta_pct": -1.3
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A11",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-14T15:48:10Z",
+  "minute": 8148,
+  "event_class": "MACHINE",
+  "fault_type": "DISCHARGE_RESTRICTION",
+  "confidence": 1.0,
+  "evidence_signal": "flow_m3_h",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.639
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.063
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 264.631,
+    "baseline": 310.773,
+    "delta_pct": -14.8
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 15.986,
+    "baseline": 16.17,
+    "delta_pct": -1.1
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 356.375,
+    "baseline": 339.898,
+    "delta_pct": 4.8
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 60.455,
+    "baseline": 64.423,
+    "delta_pct": -6.2
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 33.886,
+    "baseline": 36.725,
+    "delta_pct": -7.7
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 1.228,
+    "baseline": 1.266,
+    "delta_pct": -3.0
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.166,
+    "baseline": 0.162,
+    "delta_pct": 2.5
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.195,
+    "baseline": 3.2,
+    "delta_pct": -0.2
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 40.851,
+    "baseline": 40.917,
+    "delta_pct": -0.2
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 68.487,
+    "baseline": 73.65,
+    "delta_pct": -7.0
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 11.571,
+    "baseline": 9.945,
+    "delta_pct": 16.3
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 23.896,
+    "baseline": 24.283,
+    "delta_pct": -1.6
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A09",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-13T16:53:40Z",
+  "minute": 8213,
+  "event_class": "MACHINE",
+  "fault_type": "BEARING_WEAR",
+  "confidence": 0.9998,
+  "evidence_signal": "vibration_crest_factor",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.063
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.022
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 42.728,
+    "baseline": 42.012,
+    "delta_pct": 1.7
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 133.241,
+    "baseline": 132.55,
+    "delta_pct": 0.5
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.174,
+    "baseline": 1082.183,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 45.995,
+    "baseline": 46.013,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 13.145,
+    "baseline": 13.103,
+    "delta_pct": 0.3
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.697,
+    "baseline": 0.74,
+    "delta_pct": -5.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.143,
+    "baseline": 0.081,
+    "delta_pct": 76.5
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 6.385,
+    "baseline": 3.21,
+    "delta_pct": 98.9
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 35.667,
+    "baseline": 37.5,
+    "delta_pct": -4.9
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 12.266,
+    "baseline": 15.263,
+    "delta_pct": -19.6
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 37.849,
+    "baseline": 37.15,
+    "delta_pct": 1.9
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A12",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-15T03:48:10Z",
+  "minute": 8868,
+  "event_class": "MACHINE",
+  "fault_type": "DISCHARGE_RESTRICTION",
+  "confidence": 1.0,
+  "evidence_signal": "flow_m3_h",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.443
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.013
+   },
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.002
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 264.456,
+    "baseline": 310.773,
+    "delta_pct": -14.9
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 19.011,
+    "baseline": 16.17,
+    "delta_pct": 17.6
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 359.465,
+    "baseline": 339.898,
+    "delta_pct": 5.8
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 60.314,
+    "baseline": 64.423,
+    "delta_pct": -6.4
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 33.893,
+    "baseline": 36.725,
+    "delta_pct": -7.7
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 1.285,
+    "baseline": 1.266,
+    "delta_pct": 1.5
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.162,
+    "baseline": 0.162,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.197,
+    "baseline": 3.2,
+    "delta_pct": -0.1
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 38.612,
+    "baseline": 40.917,
+    "delta_pct": -5.6
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 67.092,
+    "baseline": 73.65,
+    "delta_pct": -8.9
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 8.167,
+    "baseline": 9.945,
+    "delta_pct": -17.9
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 22.406,
+    "baseline": 24.283,
+    "delta_pct": -7.7
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A10",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-14T04:53:40Z",
+  "minute": 8933,
+  "event_class": "MACHINE",
+  "fault_type": "BEARING_WEAR",
+  "confidence": 0.9999,
+  "evidence_signal": "vibration_crest_factor",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.22
+   },
+   {
+    "fault_type": "DISCHARGE_RESTRICTION",
+    "p": 0.022
+   },
+   {
+    "fault_type": "SUCTION_STRAINER_CLOGGING",
+    "p": 0.005
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 44.053,
+    "baseline": 42.012,
+    "delta_pct": 4.9
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 134.186,
+    "baseline": 132.55,
+    "delta_pct": 1.2
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.164,
+    "baseline": 1082.183,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 45.752,
+    "baseline": 46.013,
+    "delta_pct": -0.6
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 13.137,
+    "baseline": 13.103,
+    "delta_pct": 0.3
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.8,
+    "baseline": 0.74,
+    "delta_pct": 8.1
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.166,
+    "baseline": 0.081,
+    "delta_pct": 104.9
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 6.438,
+    "baseline": 3.21,
+    "delta_pct": 100.6
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 33.0,
+    "baseline": 37.5,
+    "delta_pct": -12.0
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 12.502,
+    "baseline": 15.263,
+    "delta_pct": -18.1
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 33.531,
+    "baseline": 37.15,
+    "delta_pct": -9.7
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A13",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-15T07:40:40Z",
+  "minute": 9100,
+  "event_class": "MACHINE",
+  "fault_type": "AIR_ENTRAINMENT",
+  "confidence": 0.9969,
+  "evidence_signal": "flow_m3_h",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "DISCHARGE_RESTRICTION",
+    "p": 0.994
+   },
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.803
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.596
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 261.217,
+    "baseline": 310.773,
+    "delta_pct": -15.9
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 4.469,
+    "baseline": 16.17,
+    "delta_pct": -72.4
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 338.427,
+    "baseline": 339.898,
+    "delta_pct": -0.4
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 58.915,
+    "baseline": 64.423,
+    "delta_pct": -8.5
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 32.996,
+    "baseline": 36.725,
+    "delta_pct": -10.2
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 1.277,
+    "baseline": 1.266,
+    "delta_pct": 0.9
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.165,
+    "baseline": 0.162,
+    "delta_pct": 1.9
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.198,
+    "baseline": 3.2,
+    "delta_pct": -0.1
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 38.943,
+    "baseline": 40.917,
+    "delta_pct": -4.8
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 66.616,
+    "baseline": 73.65,
+    "delta_pct": -9.6
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 9.129,
+    "baseline": 9.945,
+    "delta_pct": -8.2
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 22.361,
+    "baseline": 24.283,
+    "delta_pct": -7.9
+   }
+  ]
+ },
+ {
+  "id": "PUMP-09-A14",
+  "asset_id": "PUMP-09",
+  "time": "2026-02-15T15:48:10Z",
+  "minute": 9588,
+  "event_class": "MACHINE",
+  "fault_type": "DISCHARGE_RESTRICTION",
+  "confidence": 0.9999,
+  "evidence_signal": "flow_m3_h",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.238
+   },
+   {
+    "fault_type": "IMBALANCE",
+    "p": 0.173
+   },
+   {
+    "fault_type": "SENSOR_CALIBRATION_SHIFT",
+    "p": 0.141
+   }
+  ],
+  "values": [
+   {
+    "key": "flow_m3_h",
+    "label": "Flow",
+    "unit": "m\u00b3/h",
+    "now": 264.413,
+    "baseline": 310.773,
+    "delta_pct": -14.9
+   },
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 18.972,
+    "baseline": 16.17,
+    "delta_pct": 17.3
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 359.327,
+    "baseline": 339.898,
+    "delta_pct": 5.7
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 60.517,
+    "baseline": 64.423,
+    "delta_pct": -6.1
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 33.865,
+    "baseline": 36.725,
+    "delta_pct": -7.8
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 1.33,
+    "baseline": 1.266,
+    "delta_pct": 5.1
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.162,
+    "baseline": 0.162,
+    "delta_pct": 0.0
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 3.18,
+    "baseline": 3.2,
+    "delta_pct": -0.6
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 41.267,
+    "baseline": 40.917,
+    "delta_pct": 0.9
+   },
+   {
+    "key": "motor_winding_temp_c",
+    "label": "Winding temp.",
+    "unit": "\u00b0C",
+    "now": 68.012,
+    "baseline": 73.65,
+    "delta_pct": -7.7
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 12.941,
+    "baseline": 9.945,
+    "delta_pct": 30.1
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 23.249,
+    "baseline": 24.283,
+    "delta_pct": -4.3
+   }
+  ]
+ },
+ {
+  "id": "PUMP-08-A11",
+  "asset_id": "PUMP-08",
+  "time": "2025-09-14T16:53:40Z",
+  "minute": 9653,
+  "event_class": "MACHINE",
+  "fault_type": "BEARING_WEAR",
+  "confidence": 0.9998,
+  "evidence_signal": "vibration_crest_factor",
+  "rule": "class probability >= 0.9 for 15 min, 12 h cooldown per fault type",
+  "other_probabilities": [
+   {
+    "fault_type": "MISALIGNMENT",
+    "p": 0.412
+   },
+   {
+    "fault_type": "DISCHARGE_RESTRICTION",
+    "p": 0.289
+   },
+   {
+    "fault_type": "SENSOR_DRIFT",
+    "p": 0.157
+   }
+  ],
+  "values": [
+   {
+    "key": "suction_pressure_kpa",
+    "label": "Suction pressure",
+    "unit": "kPa",
+    "now": 43.133,
+    "baseline": 42.012,
+    "delta_pct": 2.7
+   },
+   {
+    "key": "discharge_pressure_kpa",
+    "label": "Discharge pressure",
+    "unit": "kPa",
+    "now": 133.598,
+    "baseline": 132.55,
+    "delta_pct": 0.8
+   },
+   {
+    "key": "motor_speed_rpm",
+    "label": "Motor speed",
+    "unit": "rpm",
+    "now": 1082.157,
+    "baseline": 1082.183,
+    "delta_pct": -0.0
+   },
+   {
+    "key": "motor_current_a",
+    "label": "Motor current",
+    "unit": "A",
+    "now": 46.211,
+    "baseline": 46.013,
+    "delta_pct": 0.4
+   },
+   {
+    "key": "motor_power_kw",
+    "label": "Motor power",
+    "unit": "kW",
+    "now": 13.16,
+    "baseline": 13.103,
+    "delta_pct": 0.4
+   },
+   {
+    "key": "vibration_rms_mm_s",
+    "label": "Vibration velocity",
+    "unit": "mm/s",
+    "now": 0.79,
+    "baseline": 0.74,
+    "delta_pct": 6.8
+   },
+   {
+    "key": "vibration_accel_rms_g",
+    "label": "Vibration accel.",
+    "unit": "g",
+    "now": 0.22,
+    "baseline": 0.081,
+    "delta_pct": 171.6
+   },
+   {
+    "key": "vibration_crest_factor",
+    "label": "Crest factor",
+    "unit": "",
+    "now": 6.275,
+    "baseline": 3.21,
+    "delta_pct": 95.5
+   },
+   {
+    "key": "bearing_temp_c",
+    "label": "Bearing temp.",
+    "unit": "\u00b0C",
+    "now": 31.167,
+    "baseline": 37.5,
+    "delta_pct": -16.9
+   },
+   {
+    "key": "fluid_temp_c",
+    "label": "Fluid temp.",
+    "unit": "\u00b0C",
+    "now": 13.557,
+    "baseline": 15.263,
+    "delta_pct": -11.2
+   },
+   {
+    "key": "ambient_temp_c",
+    "label": "Ambient temp.",
+    "unit": "\u00b0C",
+    "now": 36.626,
+    "baseline": 37.15,
+    "delta_pct": -1.4
+   }
+  ]
+ }
+]

@@ -1,0 +1,41 @@
+{
+  "frozen_at": "2026-11-07T18:56:46Z",
+  "decision": "user, 7 Nov 2026: use the 10 s stride for the test submission",
+  "frozen_before_test_alerts": true,
+  "model": {
+    "run": "rp3-3h-r32-v1",
+    "checkpoint": "checkpoint_last_step11500",
+    "context_min": 180,
+    "cell_s": 10
+  },
+  "stride_s": 10,
+  "rule": {
+    "threshold": 0.9,
+    "persistence_min": 15,
+    "persistence_windows": 90,
+    "running_average": "none",
+    "cooldown_minutes": 720,
+    "global_gap_minutes": 5,
+    "gap_inclusive": true
+  },
+  "selection": "chosen on the 7 validation pumps only (rule from exp6 gap_persistence.py; stride from optimize/results/persistence-v1)",
+  "validation_scores": {
+    "all7": 81.8,
+    "pump_08_09": 79.2,
+    "generated5": 83.3,
+    "lopo_3h_expected": 77.6
+  },
+  "script": "optimize/predict_test_fine.py (RULE, STRIDE_S, RUN, CHECKPOINT constants)",
+  "amendments": [
+    {
+      "at": "2026-11-07",
+      "decision": "user, 7 Nov 2026: apply the gap boundary fix",
+      "change": "an alert at exactly global_gap_minutes (5:00) after the previous alert of the pump is dropped (t - last <= gap); before: kept (t - last < gap)",
+      "reason": "the organizer scorer merges alerts <= 5 min apart into one burst, and a mixed-type burst gets no fault-type credit; the old boundary disagreed with the scorer",
+      "found_by": "inspection of the test alert file format and burst structure; no test labels, events, benign windows or maintenance records were read",
+      "effect_validation": "no change: 74 alerts on 7 pumps, composite 81.82; PUMP-08/09 file identical",
+      "effect_test": "34 alerts before and after; 2 PUMP-11 SENSOR_STUCK alerts move 10 s (08:57:20 -> 08:57:30, 20:57:20 -> 20:57:30); 0 mixed-type bursts",
+      "old_files": "results/submission-fine/before-gap-fix/"
+    }
+  ]
+}

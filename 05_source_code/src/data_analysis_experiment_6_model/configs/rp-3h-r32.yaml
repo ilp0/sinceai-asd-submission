@@ -1,0 +1,12 @@
+# Experiment 6 run: context 3h (180 min at 10 s cells = 1 080 cells, 34 patches), LoRA rank 32 / alpha 64.
+inherit: runpod.yaml
+
+run:
+  name: rp-3h-r32-v1
+
+backbone:
+  lora: {rank: 32, alpha: 64, dropout: 0.0}
+
+input:
+  minutes: 180
+  sample_period_s: 10

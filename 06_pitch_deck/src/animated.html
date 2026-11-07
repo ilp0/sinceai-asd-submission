@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RETROFIT AI · animated pitch</title>
+<!--
+  Animated pitch slides, 1920x1080. Every motion is a pure function of the time t (seconds),
+  so the page can be rendered frame by frame (render_anim.mjs calls window.render(t)).
+  Cue times follow the voice-over at 1.05x (04_demo_video/voiceover/voiceover_1.05x.wav).
+  Open the file directly to see a live preview (loops). ?t=12.5 shows one fixed time.
+-->
+<style>
+:root{
+  --bg:#ffffff;--panel:#f1f4f8;--line:#cdd6e1;--text:#000;--muted:#3b4652;
+  --accent:#1f6fd6;--accent2:#5aa2ff;--soft:#e6effb;--bar:#a9b6c6;--bad:#e5484d;--ok:#1f9d55;--orange:#fa500f;
+  font-family:Inter,"SF Pro Display",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--text)}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+canvas.full{position:absolute;left:0;top:0;pointer-events:none}
+.scene{position:absolute;inset:0;padding:110px 140px;opacity:0;will-change:opacity,transform}
+h1{font-size:92px;font-weight:800;letter-spacing:-.025em;line-height:1.04}
+h1 .a{color:var(--accent)}
+h2{font-size:84px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.lead{font-size:44px;line-height:1.3;color:var(--muted);max-width:1300px}
+.tag{font-size:34px;font-weight:700;color:var(--accent)}
+.small{font-size:32px;color:var(--muted);line-height:1.3}
+[data-at]{will-change:opacity,transform}
+.box{background:var(--panel);border:3px solid var(--line);border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:38px;font-weight:700;line-height:1.15;gap:14px;padding:20px}
+.box.hi{border-color:var(--accent);background:#fff}
+.box.end{background:var(--accent);border-color:var(--accent);color:#fff}
+.lbl{font-size:30px;font-weight:600;color:var(--muted)}
+.pipe{position:absolute;height:6px;border-radius:3px;background:var(--line)}
+.pipe.v{width:6px;height:auto}
+.abs{position:absolute}
+svg.ic{display:block}
+
+/* scene 1 */
+#s1 .top{position:absolute;left:140px;top:96px;font-size:36px;font-weight:700;color:var(--muted);display:flex;gap:18px;align-items:center}
+#s1 .top b{color:var(--accent)}
+#s1 h1{position:absolute;left:140px;top:250px;font-size:110px}
+#s1 .lead{position:absolute;left:140px;top:520px}
+#s1 .alert{position:absolute;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:var(--bad);color:#fff;font:800 70px/120px system-ui;text-align:center}
+#s1 .ring{position:absolute;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;border:6px solid var(--bad)}
+
+/* scene 2 */
+#s2 .row{position:absolute;left:140px;right:140px;top:360px;height:420px}
+#s2 .n{position:absolute;top:0;height:420px;width:330px}
+#s2 .logo{width:150px;height:150px;border-radius:18px;image-rendering:pixelated}
+#s2 .lora{position:absolute;right:-26px;top:-30px;background:var(--orange);color:#fff;font-size:34px;font-weight:800;padding:10px 22px;border-radius:40px}
+#s2 .fhead{position:absolute;top:60px;height:300px;width:300px;border-style:dashed;color:var(--muted);font-size:36px}
+#s2 .strike{position:absolute;left:30px;right:30px;top:50%;height:8px;background:var(--bad);border-radius:4px;transform-origin:left center}
+#s2 .bars13{display:flex;align-items:flex-end;gap:7px;height:210px;width:236px;border-bottom:3px solid var(--line)}
+#s2 .bars13 i{flex:1;background:#fff;border-radius:5px 5px 0 0;display:block}
+#s2 .sens{display:flex;flex-direction:column;gap:20px;width:250px}
+#s2 .sens svg{width:250px;height:44px}
+
+/* scene 3 */
+#s3 .bench{position:absolute;left:140px;right:140px;top:330px;display:grid;grid-template-columns:repeat(3,1fr);gap:110px}
+#s3 h3{font-size:44px;font-weight:700;margin-bottom:28px}
+#s3 .bars{display:flex;align-items:flex-end;gap:34px;height:420px;border-bottom:4px solid var(--line);position:relative}
+#s3 .bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+#s3 .bar b{font-size:58px;font-weight:800;margin-bottom:14px}
+#s3 .bar i{display:block;width:100%;border-radius:14px 14px 0 0;background:var(--bar)}
+#s3 .bar.us i{background:var(--accent)}
+#s3 .bar.us b{color:var(--accent)}
+#s3 .names{display:flex;gap:34px;margin-top:16px}
+#s3 .names span{flex:1;text-align:center;font-size:36px;color:var(--muted)}
+#s3 .x2{position:absolute;right:calc(25% - 72px);top:52%;background:var(--orange);color:#fff;font-size:44px;font-weight:800;padding:8px 22px;border-radius:40px}
+#s3 .src{position:absolute;left:140px;bottom:70px;font-size:30px;color:var(--muted)}
+
+/* scene 4 */
+#s4 .n{position:absolute;top:360px;width:330px;height:380px}
+#s4 .card{position:absolute;left:24px;right:24px;top:150px;display:flex;flex-direction:column;gap:16px}
+#s4 .ln{display:flex;align-items:center;gap:12px;height:30px}
+#s4 .ln i{display:block;height:14px;border-radius:7px;background:var(--line)}
+#s4 .ln s{display:block;width:30px;height:30px;border-radius:50%;background:var(--ok);color:#fff;font:800 22px/30px system-ui;text-align:center;text-decoration:none;flex:none}
+
+/* scene 5 */
+#s5 .tiles{position:absolute;left:140px;right:140px;top:330px;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:50px}
+#s5 .tile{background:var(--panel);border:3px solid var(--line);border-radius:30px;height:520px;padding:50px 46px;display:flex;flex-direction:column;gap:22px}
+#s5 .v{font-size:120px;font-weight:800;color:var(--accent);letter-spacing:-.03em;line-height:1}
+#s5 .t{font-size:38px;line-height:1.25;color:var(--muted);font-weight:600}
+#s5 .onsite{display:flex;align-items:center;gap:20px;margin-top:auto;font-size:36px;font-weight:700}
+#s5 .grid{display:grid;grid-template-columns:repeat(26,1fr);gap:5px;margin-top:10px}
+#s5 .grid i{display:block;aspect-ratio:1;border-radius:3px;background:var(--line)}
+
+/* scene 6 */
+#s6 .pumps{position:absolute;left:140px;top:320px;display:flex;gap:10px;align-items:center}
+#s6 .weeks{position:absolute;left:1000px;top:330px;width:780px;display:grid;grid-template-columns:repeat(50,1fr);gap:5px}
+#s6 .weeks i{display:block;aspect-ratio:1;border-radius:50%;background:var(--accent2)}
+#s6 .cap{position:absolute;font-size:36px;font-weight:700;color:var(--muted)}
+#s6 .n{position:absolute;width:420px;height:200px}
+
+/* scene 7 */
+#s7 .left{position:absolute;left:140px;top:330px;width:760px}
+#s7 .right{position:absolute;left:1020px;top:300px;width:760px}
+#s7 .slider{position:relative;height:18px;border-radius:9px;background:var(--line);margin:70px 0 0}
+#s7 .fill{position:absolute;left:0;top:0;bottom:0;border-radius:9px;background:var(--accent)}
+#s7 .knob{position:absolute;top:50%;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:#000;border:9px solid #fff;box-shadow:0 0 0 4px #000}
+#s7 .ends{display:flex;justify-content:space-between;margin-top:56px;font-size:40px;font-weight:700;line-height:1.2}
+#s7 .ends span:last-child{text-align:right}
+#s7 .sb{display:flex;align-items:center;gap:20px;height:56px;font-size:32px;font-weight:600}
+#s7 .sb span{width:250px;text-align:right;color:var(--muted)}
+#s7 .sb .tr{flex:1;height:22px;border-radius:11px;background:var(--panel);overflow:hidden}
+#s7 .sb .tr i{display:block;height:100%;border-radius:11px;background:var(--bar)}
+#s7 .sb.top .tr i{background:var(--bad)}
+#s7 .ver{display:flex;align-items:center;gap:24px;margin-top:60px}
+#s7 .ver .box{height:130px;width:220px;font-size:32px;flex:none}
+#s7 .stamp{width:130px;height:130px;border-radius:50%;background:var(--ok);color:#fff;font:800 76px/130px system-ui;text-align:center;flex:none}
+
+/* scene 8 */
+#s8{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+#s8 h1{font-size:220px}
+#s8 img{width:170px;height:170px;border-radius:22px;image-rendering:pixelated}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- 1  Problem / title ------------------------------------------------------------------ -->
+<section class="scene" id="s1" data-start="0" data-end="10.15">
+  <canvas class="full" id="waves" width="1920" height="1080"></canvas>
+  <div class="top" data-at="0.15" data-fx="fade"><b>Team ASD</b>· Business Turku challenge</div>
+  <h1><span data-at="0.4" data-fx="up" style="display:inline-block">Adding condition awareness</span><br>
+      <span data-at="0.7" data-fx="up" style="display:inline-block">to <span class="a">existing machines</span></span></h1>
+  <p class="lead" data-at="3.8" data-fx="up">Find emerging faults in the sensor data you already have. No new equipment.</p>
+  <div class="ring" id="s1ring"></div>
+  <div class="alert" id="s1alert">!</div>
+</section>
+
+<!-- 2  Approach ------------------------------------------------------------------------- -->
+<section class="scene" id="s2" data-start="10.15" data-end="22.42">
+  <h2 data-at="10.3" data-fx="left">Approach</h2>
+  <div class="row">
+    <div class="n box" style="left:0" data-at="10.45" data-fx="up">
+      <div class="sens" id="s2sens"></div>
+      <div class="lbl">Sensor data</div>
+    </div>
+    <div class="pipe" style="left:340px;top:207px;width:100px" data-pipe="10.9"></div>
+    <div class="n box hi" style="left:450px;width:380px" data-at="10.75" data-fx="scale">
+      <img class="logo" src="assets/timestral-logo.png" alt="">
+      <div style="font-size:46px">Timestral</div>
+      <div class="lbl">pre-trained time-series transformer</div>
+      <div class="lora" data-at="16.35" data-fx="pop">LoRA</div>
+    </div>
+    <div class="pipe" style="left:840px;top:207px;width:100px" data-pipe="11.6"></div>
+    <div class="box fhead" style="left:950px" data-at="12.3" data-fx="fade" id="fhead">Forecast<br>head
+      <div class="strike" id="strike"></div></div>
+    <div class="n box end" style="left:950px;width:300px" data-at="15.25" data-fx="drop">
+      <div style="font-size:40px">Fault<br>classifier</div>
+    </div>
+    <div class="pipe" style="left:1260px;top:207px;width:100px" data-pipe="16.0"></div>
+    <div class="n box" style="left:1370px;width:270px;padding:20px 0;background:#fff" data-at="17.85" data-fx="up">
+      <div class="bars13" id="bars13"></div>
+      <div class="lbl" data-at="18.2" data-fx="fade">13 fault types</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3  Benchmark ------------------------------------------------------------------------ -->
+<section class="scene" id="s3" data-start="22.42" data-end="36.76">
+  <h2 data-at="22.55" data-fx="left">Benchmark</h2>
+  <div class="bench">
+    <div data-at="22.8" data-fx="up"><h3>Challenge score</h3>
+      <div class="bars">
+        <div class="bar"><b data-count="65.6" data-dec="1" data-cat="30.3" data-cdur="1.1">0</b><i data-grow="65.6" data-gat="30.3" data-gdur="1.1"></i></div>
+        <div class="bar us"><b data-count="81.8" data-dec="1" data-cat="27.6" data-cdur="1.3">0</b><i data-grow="81.8" data-gat="27.6" data-gdur="1.3"></i></div>
+      </div>
+      <div class="names"><span>Baseline</span><span>Ours</span></div></div>
+    <div data-at="23.0" data-fx="up"><h3>Faults detected</h3>
+      <div class="bars">
+        <div class="bar"><b data-count="71" data-suf="%" data-cat="32.2" data-cdur="1.0">0</b><i data-grow="71" data-gat="32.2" data-gdur="1.0"></i></div>
+        <div class="bar us"><b data-count="88" data-suf="%" data-cat="32.5" data-cdur="1.2">0</b><i data-grow="88" data-gat="32.5" data-gdur="1.2"></i></div>
+      </div>
+      <div class="names"><span>Baseline</span><span>Ours</span></div></div>
+    <div data-at="23.2" data-fx="up"><h3>Correct fault type</h3>
+      <div class="bars">
+        <div class="bar"><b data-count="38" data-suf="%" data-cat="34.1" data-cdur="0.9">0</b><i data-grow="38" data-gat="34.1" data-gdur="0.9"></i></div>
+        <div class="bar us"><b data-count="75" data-suf="%" data-cat="34.6" data-cdur="1.2">0</b><i data-grow="75" data-gat="34.6" data-gdur="1.2"></i></div>
+        <div class="x2" data-at="35.7" data-fx="pop">2×</div>
+      </div>
+      <div class="names"><span>Baseline</span><span>Ours</span></div></div>
+  </div>
+  <div class="src" data-at="23.6" data-fx="fade">7 validation pumps (2 official + 5 generated) · organizer scorer · baseline: organizer B1</div>
+</section>
+
+<!-- 4  Use case ------------------------------------------------------------------------- -->
+<section class="scene" id="s4" data-start="36.76" data-end="49.52">
+  <h2 data-at="36.9" data-fx="left">Use case</h2>
+  <div class="n box" style="left:140px" data-at="38.6" data-fx="up">
+    <svg class="ic" id="bell" width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="#e5484d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+    <div>Fault alert</div><div class="lbl">from Timestral</div>
+  </div>
+  <div class="pipe" style="left:480px;top:547px;width:110px" data-pipe="40.6"></div>
+  <div class="n box hi" style="left:600px" data-at="40.75" data-fx="up">
+    <svg class="ic" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#1f6fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;top:34px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+    <div style="position:absolute;top:122px;font-size:34px">LLM + manual</div>
+    <div class="card" style="top:190px" id="steps"></div>
+  </div>
+  <div class="pipe" style="left:940px;top:547px;width:110px" data-pipe="44.9"></div>
+  <div class="n box hi" style="left:1060px" data-at="44.95" data-fx="up">
+    <svg class="ic" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#1f9d55" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;top:34px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+    <div style="position:absolute;top:122px;font-size:34px">Verifier LLM</div>
+    <div class="card" style="top:190px" id="checks"></div>
+  </div>
+  <div class="pipe" style="left:1400px;top:547px;width:110px" data-pipe="47.2"></div>
+  <div class="n box end" style="left:1520px;width:260px" data-at="47.3" data-fx="scale">
+    <svg class="ic" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
+    <div>Operator</div>
+  </div>
+</section>
+
+<!-- 5  Cost ----------------------------------------------------------------------------- -->
+<section class="scene" id="s5" data-start="49.52" data-end="62.95">
+  <h2 data-at="49.65" data-fx="left">Cost</h2>
+  <div class="tiles">
+    <div class="tile" data-at="49.8" data-fx="up">
+      <div class="v" data-count="26" data-suf="M" data-cat="49.9" data-cdur="1.6">0</div>
+      <div class="t">parameters</div>
+      <div class="onsite" data-at="52.3" data-fx="up">
+        <svg width="74" height="74" viewBox="0 0 24 24" fill="none" stroke="#1f6fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+        Runs on-site.<br>Data stays there.</div>
+    </div>
+    <div class="tile" data-at="55.2" data-fx="up">
+      <div class="v" data-count="1.4" data-dec="1" data-suf="M" data-cat="55.3" data-cdur="1.2">0</div>
+      <div class="t">weights trained (of 26M)</div>
+      <div class="grid" id="wgrid"></div>
+    </div>
+    <div class="tile" data-at="58.35" data-fx="up">
+      <div class="v" data-count="8.97" data-dec="2" data-pre="$" data-cat="59.6" data-cdur="2.6">$0.00</div>
+      <div class="t">one-time training</div>
+      <div class="onsite" data-at="58.9" data-fx="up">
+        <svg width="74" height="74" viewBox="0 0 24 24" fill="none" stroke="#1f6fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+        1 × A100<br>5 hours</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6  Generalizability ----------------------------------------------------------------- -->
+<section class="scene" id="s6" data-start="62.95" data-end="74.19">
+  <h2 data-at="63.1" data-fx="left">Not pump-specific</h2>
+  <div class="pumps" id="pumps"></div>
+  <div class="cap" style="left:140px;top:470px" data-at="65.1" data-fx="fade">7 public pumps</div>
+  <div class="weeks" id="weeks"></div>
+  <div class="cap" style="left:1000px;top:470px" data-at="66.9" data-fx="fade">+ 250 simulated pump-weeks</div>
+  <div class="n box" style="left:140px;top:640px" data-at="69.9" data-fx="up">
+    <svg width="300" height="70" viewBox="0 0 300 70"><path id="anyts" d="M0 35 C25 5 50 5 75 35 S125 65 150 35 S200 5 225 35 S275 65 300 35" fill="none" stroke="#1f6fd6" stroke-width="6"/></svg>
+    <div style="font-size:36px">Any annotated time series</div>
+  </div>
+  <div class="n box" style="left:620px;top:640px" data-at="70.5" data-fx="up">
+    <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#1f6fd6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/></svg>
+    <div style="font-size:36px">+ its manual</div>
+  </div>
+  <div class="pipe" style="left:1060px;top:737px;width:150px" data-pipe="72.1"></div>
+  <div class="n box end" style="left:1220px;top:610px;width:560px;height:260px;flex-direction:row;gap:30px" data-at="72.2" data-fx="scale">
+    <img src="assets/timestral-logo.png" style="width:140px;height:140px;border-radius:16px;image-rendering:pixelated" alt="">
+    <div style="font-size:48px;text-align:left">Same<br>pipeline</div>
+  </div>
+</section>
+
+<!-- 7  Reliability and safety ----------------------------------------------------------- -->
+<section class="scene" id="s7" data-start="74.19" data-end="85.81">
+  <h2 data-at="74.3" data-fx="left">Reliability and safety</h2>
+  <div class="left" data-at="74.5" data-fx="up">
+    <div class="tag">Alert threshold: set by the customer</div>
+    <div class="slider"><div class="fill" id="fill"></div><div class="knob" id="knob"></div></div>
+    <div class="ends"><span id="endL">Fewer missed<br>alerts</span><span id="endR">Fewer false<br>alarms</span></div>
+  </div>
+  <div class="right">
+    <div data-at="79.2" data-fx="up">
+      <div class="tag" style="margin-bottom:20px">Each alert shows its cause</div>
+      <div class="sb top"><span>Vibration</span><div class="tr"><i data-grow="92" data-gat="79.6" data-gdur="1" data-w="1"></i></div></div>
+      <div class="sb"><span>Bearing temp.</span><div class="tr"><i data-grow="38" data-gat="79.8" data-gdur="1" data-w="1"></i></div></div>
+      <div class="sb"><span>Flow</span><div class="tr"><i data-grow="14" data-gat="80.0" data-gdur="1" data-w="1"></i></div></div>
+    </div>
+    <div class="ver">
+      <div class="box" data-at="81.5" data-fx="up">Real<br>manual</div>
+      <div class="pipe" style="position:relative;width:60px;flex:none" data-pipe="82.0"></div>
+      <div class="box hi" data-at="82.2" data-fx="up">Advice</div>
+      <div class="stamp" data-at="83.45" data-fx="pop">✓</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8  Demo ----------------------------------------------------------------------------- -->
+<section class="scene" id="s8" data-start="85.81" data-end="88.0">
+  <img src="assets/timestral-logo.png" data-at="85.95" data-fx="scale" alt="">
+  <h1 data-at="86.1" data-fx="up">Demo</h1>
+</section>
+
+<canvas class="full" id="fx" width="1920" height="1080"></canvas>
+</div>
+
+<script>
+const END = 88.0;
+const clamp = (x) => x < 0 ? 0 : x > 1 ? 1 : x;
+const eOut = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const eIO = (x) => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const eBack = (x) => { x = clamp(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const rnd = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+
+// ---------- build repeated elements ----------
+const bars13 = $("#bars13");
+const H13 = [.12, .08, .2, .1, .93, .55, .07, .15, .1, .05, .25, .09, .06];
+H13.forEach(() => bars13.appendChild(document.createElement("i")));
+const sens = $("#s2sens");
+for (let k = 0; k < 4; k++) {
+  const p = Array.from({ length: 60 }, (_, i) => `${(i / 59 * 250).toFixed(1)},${(22 + Math.sin(i * (0.35 + k * .17) + k) * 12 + (rnd(i + k * 99) - .5) * 10).toFixed(1)}`).join(" ");
+  sens.insertAdjacentHTML("beforeend", `<svg viewBox="0 0 250 44"><polyline points="${p}" fill="none" stroke="${["#1f6fd6", "#fa500f", "#1f9d55", "#8a63d2"][k]}" stroke-width="3.5" stroke-linejoin="round"/></svg>`);
+}
+const steps = $("#steps"), checks = $("#checks");
+[.95, .8, .9, .7].forEach((w) => {
+  steps.insertAdjacentHTML("beforeend", `<div class="ln"><i style="width:${w * 100}%"></i></div>`);
+  checks.insertAdjacentHTML("beforeend", `<div class="ln"><s>✓</s><i style="width:${w * 75}%"></i></div>`);
+});
+const wgrid = $("#wgrid");
+for (let i = 0; i < 260; i++) wgrid.appendChild(document.createElement("i"));   // 1 cell = 100k weights
+const LIT = [...Array(260).keys()].sort((a, b) => rnd(a + 5) - rnd(b + 5)).slice(0, 14);
+const pumps = $("#pumps");
+const PUMP = `<svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#1f6fd6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="13" r="6"/><circle cx="10" cy="13" r="2"/><path d="M16 13h5M10 7V3h6M3 21h14"/></svg>`;
+for (let i = 0; i < 7; i++) pumps.insertAdjacentHTML("beforeend", `<div data-at="${(65.2 + i * .16).toFixed(2)}" data-fx="pop">${PUMP}</div>`);
+const weeks = $("#weeks");
+for (let i = 0; i < 250; i++) weeks.appendChild(document.createElement("i"));
+
+// ---------- measure pipes (before any transform) ----------
+const PIPES = $$("[data-pipe]").map((e) => { const r = e.getBoundingClientRect(); return { el: e, on: +e.dataset.pipe, x0: r.left, x1: r.right, y: r.top + r.height / 2, scene: e.closest(".scene") }; });
+const SCENES = $$(".scene").map((e) => ({ el: e, s: +e.dataset.start, e: +e.dataset.end }));
+const ANIM = $$("[data-at]").map((e) => ({ el: e, at: +e.dataset.at, fx: e.dataset.fx || "up" }));
+const COUNT = $$("[data-count]");
+const GROW = $$("[data-grow]");
+
+const fx = $("#fx").getContext("2d");
+const wv = $("#waves").getContext("2d");
+
+function sceneAlpha(sc, t) {
+  const fin = sc.s === 0 ? 1 : eIO((t - (sc.s - .25)) / .5);
+  const fout = sc.e >= END ? 1 : 1 - eIO((t - (sc.e - .25)) / .5);
+  return Math.min(fin, fout);
+}
+
+function drawWaves(t) {
+  wv.clearRect(0, 0, 1920, 1080);
+  const base = [800, 880, 960], col = ["#1f6fd6", "#9fb0c4", "#1f9d55"];
+  const shift = t * 260;
+  for (let k = 0; k < 3; k++) {
+    wv.beginPath();
+    for (let x = 0; x <= 1920; x += 6) {
+      const u = (x + shift) / 1920;
+      let y = Math.sin(u * 9 + k * 2) * 14 + Math.sin(u * 31 + k) * 6 + (rnd(Math.floor((x + shift) / 6) + k * 1000) - .5) * 8;
+      if (k === 0) {   // emerging fault: amplitude grows near the right edge after t = 6.5
+        const grow = eIO((t - 6.4) / 2.2) * Math.max(0, (x - 900) / 1020);
+        y += Math.sin(u * 70) * 46 * grow;
+      }
+      const yy = base[k] + y;
+      x === 0 ? wv.moveTo(x, yy) : wv.lineTo(x, yy);
+    }
+    wv.strokeStyle = col[k]; wv.lineWidth = k === 0 ? 5 : 4; wv.globalAlpha = eOut(t / 1.2) * (k === 0 ? 1 : .7);
+    wv.stroke();
+  }
+  wv.globalAlpha = 1;
+  // alert marker
+  const a = eBack((t - 8.6) / .5), al = $("#s1alert"), rg = $("#s1ring");
+  al.style.left = rg.style.left = "1690px"; al.style.top = rg.style.top = "700px";
+  al.style.opacity = clamp((t - 8.6) / .2); al.style.transform = `scale(${a})`;
+  const rp = ((t - 8.9) % 1.2 + 1.2) % 1.2 / 1.2;
+  rg.style.opacity = t > 8.9 ? (1 - rp) : 0; rg.style.transform = `scale(${1 + rp * 1.4})`;
+}
+
+function render(t) {
+  for (const sc of SCENES) {
+    const a = sceneAlpha(sc, t);
+    sc.el.style.opacity = a;
+    sc.el.style.visibility = a > 0.001 ? "visible" : "hidden";
+    const z = t > sc.e - .25 && sc.e < END ? 1 + .03 * eIO((t - (sc.e - .25)) / .5) : 1;
+    sc.el.style.transform = `scale(${z})`;
+  }
+  for (const o of ANIM) {
+    const d = o.fx === "pop" ? .45 : o.fx === "drop" ? .7 : .65;
+    const p = (t - o.at) / d, e = eOut(p), s = o.el.style;
+    s.opacity = clamp(p * 1.4);
+    if (o.fx === "up") s.transform = `translateY(${(1 - e) * 46}px)`;
+    else if (o.fx === "left") s.transform = `translateX(${(1 - e) * -60}px)`;
+    else if (o.fx === "scale") s.transform = `scale(${.86 + .14 * e})`;
+    else if (o.fx === "pop") s.transform = `scale(${eBack(p)})`;
+    else if (o.fx === "drop") s.transform = `translateY(${(1 - eBack(p)) * -120}px)`;
+    else if (o.fx === "fade") s.transform = "none";
+  }
+  for (const c of COUNT) {
+    const p = eOut((t - +c.dataset.cat) / +c.dataset.cdur), v = +c.dataset.count * p;
+    c.textContent = (c.dataset.pre || "") + v.toFixed(+(c.dataset.dec || 0)) + (c.dataset.suf || "");
+    if (c.closest(".bar")) c.style.opacity = clamp((t - +c.dataset.cat) / .25);
+  }
+  for (const g of GROW) {
+    const p = eOut((t - +g.dataset.gat) / +g.dataset.gdur), v = +g.dataset.grow * p;
+    if (g.dataset.w) g.style.width = v + "%"; else g.style.height = v + "%";
+  }
+  // scene 1
+  if (t < 10.6) drawWaves(t);
+  // scene 2: forecast head struck out and dropped, 13 bars, sensor pulse
+  const st = eOut((t - 14.2) / .45), fh = $("#fhead");
+  $("#strike").style.transform = `scaleX(${st})`;
+  const fall = eIO((t - 14.75) / .6);
+  if (t > 14.75) { fh.style.opacity = 1 - fall; fh.style.transform = `translateY(${fall * 140}px) rotate(${fall * 9}deg)`; }
+  $$("i", bars13).forEach((b, i) => {
+    const p = eOut((t - 18.3 - i * .07) / .6);
+    const live = 1 + .12 * Math.sin(t * 2.4 + i * 1.3) * (t > 19 ? 1 : 0);
+    b.style.height = Math.min(100, H13[i] * 100 * p * live) + "%";
+    b.style.background = H13[i] > .9 ? "#fa500f" : "#9fc1ee";
+  });
+  $$("svg", sens).forEach((s, k) => { s.style.opacity = t > 21.0 ? (k === (Math.floor((t - 21) * 2.5) % 4) ? 1 : .35) : 1; });
+  // scene 4: steps written, then checked
+  $$(".ln", steps).forEach((l, i) => { const p = eOut((t - 43.3 - i * .35) / .5); l.firstChild.style.transform = `scaleX(${p})`; l.firstChild.style.transformOrigin = "left"; });
+  $$(".ln", checks).forEach((l, i) => { const p = eBack((t - 45.5 - i * .4) / .4); l.firstChild.style.transform = `scale(${p})`; l.lastChild.style.opacity = clamp((t - 45.2) / .4); });
+  const bell = $("#bell"), bp = Math.max(0, t - 38.8);
+  bell.style.transform = `rotate(${Math.sin(bp * 14) * 14 * Math.exp(-bp * 1.6)}deg)`;
+  // scene 5: 14 of 260 cells light up (1.4M of 26M)
+  $$("i", wgrid).forEach((c, i) => {
+    const k = LIT.indexOf(i);
+    const on = k >= 0 ? eOut((t - 55.6 - k * .08) / .3) : 0;
+    c.style.background = on > 0 ? `rgba(250,80,15,${.25 + .75 * on})` : "#cdd6e1";
+    c.style.transform = `scale(${1 + .25 * on * (1 - eOut((t - 55.9 - k * .08) / .5))})`;
+  });
+  // scene 6: 250 pump-weeks fill in
+  $$("i", weeks).forEach((d, i) => { const p = eOut((t - 66.9 - i * .008) / .35); d.style.opacity = p; d.style.transform = `scale(${p})`; });
+  const tsp = $("#anyts"); const L = 420; tsp.style.strokeDasharray = L; tsp.style.strokeDashoffset = L * (1 - eIO((t - 70.1) / 1.2));
+  // scene 7: threshold knob swings between the two ends, then settles
+  let pos = .58;
+  if (t > 75.2) pos = .58 - .36 * eIO((t - 75.2) / 1.1);
+  if (t > 76.9) pos = .22 + .58 * eIO((t - 76.9) / 1.3);
+  if (t > 78.6) pos = .80 - .22 * eIO((t - 78.6) / .9);
+  $("#knob").style.left = pos * 100 + "%"; $("#fill").style.width = pos * 100 + "%";
+  const hl = (el, on) => { el.style.color = on ? "#1f6fd6" : "#000"; el.style.transform = `scale(${on ? 1.06 : 1})`; el.style.transformOrigin = el.id === "endL" ? "left" : "right"; };
+  hl($("#endL"), pos < .4); hl($("#endR"), pos > .7);
+  // flowing particles on active pipes
+  fx.clearRect(0, 0, 1920, 1080);
+  for (const p of PIPES) {
+    const sa = sceneAlpha(SCENES.find((s) => s.el === p.scene), t);
+    const on = clamp((t - p.on) / .4) * sa;
+    p.el.style.background = `rgba(31,111,214,${.25 + .45 * on})`; p.el.style.opacity = clamp((t - p.on + .3) / .3) * sa;
+    if (on <= 0) continue;
+    for (let k = 0; k < 3; k++) {
+      const u = ((t - p.on) * .9 + k / 3) % 1;
+      const x = p.x0 + (p.x1 - p.x0) * u;
+      fx.globalAlpha = on * Math.sin(Math.PI * u);
+      fx.beginPath(); fx.arc(x, p.y, 9, 0, Math.PI * 2); fx.fillStyle = "#1f6fd6"; fx.fill();
+    }
+  }
+  fx.globalAlpha = 1;
+}
+window.render = render;
+window.END = END;
+
+// live preview: loop the timeline, or ?t= for one fixed time; ?capture=1 leaves control to the renderer
+const Q = new URLSearchParams(location.search);
+if (Q.has("t")) render(+Q.get("t"));
+else if (!Q.has("capture")) {
+  const t0 = performance.now();
+  const loop = () => { render(((performance.now() - t0) / 1000) % END); requestAnimationFrame(loop); };
+  requestAnimationFrame(loop);
+} else render(0);
+</script>
+</body>
+</html>

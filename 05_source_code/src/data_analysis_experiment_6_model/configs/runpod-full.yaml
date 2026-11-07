@@ -1,0 +1,53 @@
+# Experiment 6, round 2 (user decision 7 Nov 2026, 15:20): the same model and validation, but the full
+# experiment-4 generated training data instead of 20 chosen pumps. Round 1 (rp-*) trained on 27 pumps
+# (116 667 windows) and overfitted after about 750 steps; experiment 5 trained on 462 347 windows.
+# Training: PUMP-01..07 + experiment-4 sets train (13 items), healthy (4, fault-free) and selection (4).
+# Validation (selection of checkpoints and thresholds): unchanged, PUMP-08/09 + val-new-45001 (5 pumps).
+# Locked, never read: PUMP-10..12 and the experiment-4 set "test".
+# data/training/new is not used: its 20 pumps are a subset of build/train.
+inherit: runpod.yaml
+
+data:
+  sources:
+    - name: train-orig
+      root: data/training/original
+      events: [events_train.csv]
+      benign: [benign_windows_train_validation.csv]
+    - name: gen-train
+      root_glob: ../data_analysis_experiment_4_generated/build/train/4*
+      assets: public/assets.csv
+      telemetry: public/telemetry
+      events: [private/events_stress_all.csv, public/events_train.csv]
+      benign: [public/benign_windows_train_validation.csv, public/benign_windows_stress.csv]
+    - name: gen-healthy
+      root_glob: ../data_analysis_experiment_4_generated/build/healthy/4*
+      assets: public/assets.csv
+      telemetry: public/telemetry
+      events: [private/events_stress_all.csv, public/events_train.csv]
+      benign: [public/benign_windows_train_validation.csv, public/benign_windows_stress.csv]
+    - name: gen-selection
+      root_glob: ../data_analysis_experiment_4_generated/build/selection/4*
+      assets: public/assets.csv
+      telemetry: public/telemetry
+      events: [private/events_stress_all.csv, public/events_train.csv]
+      benign: [public/benign_windows_train_validation.csv, public/benign_windows_stress.csv]
+    - name: val-orig
+      root: data/validation/original
+      events: [events_validation.csv]
+      benign: [benign_windows_train_validation.csv]
+    - name: val-new
+      root_glob: data/validation/new/4*
+      assets: public/assets.csv
+      telemetry: public/telemetry
+      events: [public/events_train.csv]
+      benign: [public/benign_windows_train_validation.csv]
+  train_assets: ["train-orig/*", "gen-train-*/*", "gen-healthy-*/*", "gen-selection-*/*"]
+  val_assets: ["val-orig/*", "val-new-*/*"]
+  locked_assets: ["*/PUMP-10", "*/PUMP-11", "*/PUMP-12", "gen-test*/*", "*test-44*/*"]
+
+train:
+  max_steps: 8000                 # about 1 pass over the (positive-oversampled) training windows at batch 64
+  warmup_steps: 300
+  early_stopping:
+    metric: bench_all/composite_max
+    patience_evals: 12            # stop after 3 000 steps without a better composite

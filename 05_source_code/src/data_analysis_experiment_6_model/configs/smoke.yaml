@@ -1,0 +1,21 @@
+# Code-path check on a laptop CPU: two public assets, tiny batches, no real training.
+inherit: base.yaml
+
+run:
+  name: smoke
+  device: cpu
+  num_workers: 0
+
+data:
+  train_assets: ["public/PUMP-01"]
+  val_assets: ["public/PUMP-08"]
+  cache_dir: cache-smoke
+  train_stride_s: 600
+  eval_stride_s: 1800
+
+train:
+  batch_size: 4
+  max_steps: 2
+  eval_every: 2
+  checkpoint_every: 2
+  eval_max_windows: 64

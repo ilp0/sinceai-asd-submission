@@ -1,0 +1,8 @@
+Parameters for training runs
+
+Context window: 3h, 6h 12h
+Epoch every 100
+Alert tresholds at 50%, 70%, 90%, 99%
+Challenge companys custom scorer results in tensorboard
+rank/alpha 32/64, 64/128
+

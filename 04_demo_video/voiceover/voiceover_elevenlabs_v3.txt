@@ -1,0 +1,29 @@
+We're Team A-S-D. Business Turku's challenge: make existing industrial machines intelligent, without replacing them... by spotting pump faults early.
+
+[short pause]
+
+We took Time-stral, a pretrained time-series transformer, removed its forecasting head, and fine-tuned it with Lora as a fault classifier. Each of thirteen fault types learns which sensors to watch.
+
+[short pause]
+
+Tested on the two official validation pumps plus five we generated, our challenge score is eighty-one point eight... against the baseline's sixty-five point six. We catch eighty-eight percent of faults, and name the right type TWICE as often.
+
+[short pause]
+
+When an alert fires, a language model reads the pump's operating manual and writes repair steps. A second pass checks every manual reference before the operator sees it.
+
+[short pause]
+
+The model has twenty-six million parameters, so it runs on-site, and the data stays there. Training touched only one point four million weights: one A one hundred, five hours... under nine dollars.
+
+[short pause]
+
+Nothing here is pump-specific. We trained on seven public pumps plus two hundred and fifty pump-weeks we simulated ourselves. Any annotated time series and its manual fit the same pipeline.
+
+[short pause]
+
+Operators set one threshold to trade missed faults against false alarms. Each alert shows which sensors caused it, and advice appears only after it is verified against the real manual.
+
+[short pause]
+
+Here it is, live.

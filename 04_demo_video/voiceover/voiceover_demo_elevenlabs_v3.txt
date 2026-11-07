@@ -1,0 +1,17 @@
+This is a replay of validation pump nine, at one hour per second.
+
+[short pause]
+
+Every ten seconds, our fine-tuned Time-stral model reads the last three hours from all sensors. The chart shows each fault probability as the replay runs.
+
+[short pause]
+
+Misalignment stays above ninety percent for fifteen minutes... so an alert fires. The model also shows its evidence: vibration velocity.
+
+[short pause]
+
+The advice cites the pump manual, and the operator can ask follow-up questions.
+
+[short pause]
+
+The operator acknowledges, and monitoring continues.

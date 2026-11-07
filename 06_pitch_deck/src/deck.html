@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RETROFIT AI</title>
+<style>
+:root{
+  --bg:#ffffff;--panel:#f1f4f8;--line:#cdd6e1;--text:#000000;--muted:#000000;
+  --accent:#1f6fd6;--on-accent:#ffffff;--bar:#a9b6c6;--ok:#3ccf7d;--warn:#f0b44c;--bad:#ff6b6b;
+  font-family:Inter,"SF Pro Display",system-ui,-apple-system,sans-serif;
+}
+@page{size:1920px 1080px;margin:0}
+*{box-sizing:border-box;margin:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:var(--bg);color:var(--text)}
+.slide{width:1920px;height:1080px;padding:120px 140px;display:flex;flex-direction:column;justify-content:center;gap:90px;position:relative;overflow:hidden;page-break-after:always}
+body.single .slide{display:none}
+body.single .slide.on{display:flex}
+h1{font-size:96px;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+h1 .a{color:var(--accent)}
+.lead{font-size:46px;color:var(--muted);line-height:1.3;max-width:1400px}
+.brand{position:absolute;left:140px;bottom:64px;font-size:40px;font-weight:700;color:var(--muted)}
+.brand span{color:var(--accent)}
+/* flow */
+.flow{display:flex;align-items:center;gap:28px}
+.box{flex:1;background:var(--panel);border:2px solid var(--line);border-radius:22px;height:230px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:600;line-height:1.2;padding:0 26px}
+.box.hi{border-color:var(--accent)}
+.box.end{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.arr{flex:none;width:56px;height:4px;background:var(--muted);position:relative}
+.arr::after{content:"";position:absolute;right:-4px;top:-12px;border-left:22px solid var(--muted);border-top:14px solid transparent;border-bottom:14px solid transparent}
+
+/* bars */
+.bench{display:grid;grid-template-columns:repeat(3,1fr);gap:90px}
+.metric h2{font-size:44px;font-weight:600;color:var(--muted);margin-bottom:34px}
+.bars{display:flex;align-items:flex-end;gap:36px;height:440px;border-bottom:3px solid var(--line)}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.bar b{font-size:52px;font-weight:700;margin-bottom:16px}
+.bar i{display:block;width:100%;border-radius:12px 12px 0 0;background:var(--bar)}
+.bar.us i{background:var(--accent)}
+.bar.us b{color:var(--accent)}
+.names{display:flex;gap:36px;margin-top:18px}
+.names span{flex:1;text-align:center;font-size:40px;color:var(--muted)}
+
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.tile{background:var(--panel);border:2px solid var(--line);border-radius:26px;padding:60px 50px;height:420px;display:flex;flex-direction:column;justify-content:center;gap:26px}
+.tile .v{font-size:104px;font-weight:700;color:var(--accent);letter-spacing:-.02em;line-height:1}
+.tile .t{font-size:40px;color:var(--muted);line-height:1.25}
+
+/* generalizability */
+.gen{display:flex;align-items:center;gap:56px}
+.ins{display:flex;flex-direction:column;gap:40px;flex:1}
+.ins .box{height:190px;flex:none}
+.gen > .box{flex:1.1;height:420px}
+
+/* reliability */
+.rel{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.rel h2{font-size:46px;font-weight:600;margin-bottom:56px}
+.slider{position:relative;height:16px;border-radius:8px;background:linear-gradient(90deg,var(--accent) 58%,var(--line) 58%)}
+.knob{position:absolute;left:58%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--text);border:8px solid var(--bg);box-shadow:0 0 0 3px var(--text)}
+.ends{display:flex;justify-content:space-between;margin-top:46px;font-size:40px;color:var(--muted);line-height:1.25}
+.ends span:last-child{text-align:right}
+.vflow{display:flex;flex-direction:column;align-items:stretch;gap:0}
+.vflow .box{height:120px;flex:none;font-size:42px}
+.varr{width:4px;height:44px;background:var(--muted);margin:0 auto;position:relative}
+.varr::after{content:"";position:absolute;left:-12px;bottom:-6px;border-top:20px solid var(--muted);border-left:14px solid transparent;border-right:14px solid transparent}
+
+.note{position:absolute;left:140px;right:140px;bottom:56px;padding-top:22px;border-top:2px solid var(--line);font-size:26px;line-height:1.4;color:var(--muted)}
+#s3{padding-bottom:230px;gap:60px}
+#s3 .bars{height:360px}
+
+.center{align-items:center;text-align:center}
+.demo h1{font-size:200px}
+</style>
+</head>
+<body>
+
+<!-- 1 Problem -->
+<section class="slide" id="s1">
+  <h1>Adding condition awareness<br>to <span class="a">existing machines</span></h1>
+  <p class="lead">We detect emerging machine faults from the sensor data that is already available, without new equipment.</p>
+  <div class="brand">Team ASD</div>
+</section>
+
+<!-- 2 Approach -->
+<section class="slide" id="s2">
+  <h1>Approach</h1>
+  <div class="flow">
+    <div class="box">Sensor data</div><div class="arr"></div>
+    <div class="box hi">Timestral embedding</div><div class="arr"></div>
+    <div class="box hi">Multi-class classification head</div><div class="arr"></div>
+    <div class="box end">Fault predictions</div>
+  </div>
+</section>
+
+<!-- 2.5 Benchmark -->
+<section class="slide" id="s3">
+  <h1>Benchmark</h1>
+  <div>
+    <div class="bench">
+      <div class="metric"><h2>Challenge score</h2>
+        <div class="bars"><div class="bar"><b>65.6</b><i style="height:65.6%"></i></div><div class="bar us"><b>81.8</b><i style="height:81.8%"></i></div></div>
+        <div class="names"><span>Baseline</span><span>Ours</span></div></div>
+      <div class="metric"><h2>Faults detected</h2>
+        <div class="bars"><div class="bar"><b>71%</b><i style="height:71%"></i></div><div class="bar us"><b>88%</b><i style="height:88%"></i></div></div>
+        <div class="names"><span>Baseline</span><span>Ours</span></div></div>
+      <div class="metric"><h2>Correct fault type</h2>
+        <div class="bars"><div class="bar"><b>38%</b><i style="height:38%"></i></div><div class="bar us"><b>75%</b><i style="height:75%"></i></div></div>
+        <div class="names"><span>Baseline</span><span>Ours</span></div></div>
+    </div>
+  </div>
+  <p class="note">Same data for both methods: organizer validation set, 7 pumps (PUMP-08/09 + 5 generated), 24 fault events, organizer scorer. Baseline: organizer B1 (mode-aware z-score).</p>
+</section>
+
+<!-- 3 Use case -->
+<section class="slide" id="s4">
+  <h1>Use case</h1>
+  <div class="flow">
+    <div class="box">Real-time alert</div><div class="arr"></div>
+    <div class="box hi">LLM with RAG</div><div class="arr"></div>
+    <div class="box hi">Verifier LLM</div><div class="arr"></div>
+    <div class="box end">Operator: alert + instructions</div>
+  </div>
+</section>
+
+<!-- 4 Cost -->
+<section class="slide" id="s5">
+  <h1>Cost</h1>
+  <div class="tiles">
+    <div class="tile"><div class="v">26M</div><div class="t">parameter model, low running cost</div></div>
+    <div class="tile"><div class="v">$8.97</div><div class="t">Trained on a single A100 for 5 hours</div></div>
+    <div class="tile"><div class="v" style="white-space:nowrap;font-size:88px">On-prem</div><div class="t">easy to integrate, data stays on site</div></div>
+  </div>
+</section>
+
+<!-- 5 Generalizability -->
+<section class="slide" id="s6">
+  <h1>Generalizability</h1>
+  <div class="gen">
+    <div class="ins">
+      <div class="box">Any annotated time series</div>
+      <div class="box">User manual</div>
+    </div>
+    <div class="arr"></div>
+    <div class="box end">Same pipeline</div>
+  </div>
+</section>
+
+<!-- 6 Reliability and safety -->
+<section class="slide" id="s7">
+  <h1>Reliability and safety</h1>
+  <div class="rel">
+    <div>
+      <h2>User-set alert threshold</h2>
+      <div class="slider"><div class="knob"></div></div>
+      <div class="ends"><span>Fewer missed<br>events</span><span>Fewer false<br>alarms</span></div>
+    </div>
+    <div class="vflow">
+      <div class="box">Real operating manual</div><div class="varr"></div>
+      <div class="box hi">LLM answer</div><div class="varr"></div>
+      <div class="box end">Verified</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 Demo -->
+<section class="slide center demo" id="s8">
+  <h1>Demo</h1>
+</section>
+
+<script>
+const n = new URLSearchParams(location.search).get('s');
+if (n) { document.body.classList.add('single'); document.getElementById('s' + n).classList.add('on'); }
+</script>
+</body>
+</html>

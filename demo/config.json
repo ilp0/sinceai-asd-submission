@@ -1,0 +1,17 @@
+{
+  "llm": {
+    "url": "http://127.0.0.1:11434",
+    "model": "hf.co/unsloth/Qwen3.5-4B-GGUF:Q8_0",
+    "label": "Qwen3.5-4B (Q8_0, local)",
+    "temperature": 0,
+    "num_ctx": 16384,
+    "think_verifier": false,
+    "max_attempts": 2
+  },
+  "model": {
+    "name": "Timestral-28M + multi-label fault head",
+    "run": "rp3-3h-r32-v1, last checkpoint (step 11500)",
+    "rule": "probability ≥ 0.9 for 15 min, 12 h cooldown per fault type"
+  },
+  "port": 8797
+}

@@ -1,0 +1,138 @@
+# Experiment 5: Timestral-28M backbone + multi-label fault head.
+# Every path is relative to this experiment directory unless absolute.
+# Override any key from the command line: --set train.learning_rate=3e-4
+
+run:
+  name: mlhead-public-v1          # output directory under runs/
+  seed: 42
+  device: cuda                    # cuda (ROCm on LUMI uses the cuda API), cpu or mps
+  precision: fp32                 # fp32 or bf16 (autocast); check bf16 against fp32 first
+  num_workers: 6
+  output_root: runs
+
+backbone:
+  path: ../data_analysis_experiment_2_lora/base_model    # config.json + model.safetensors
+  vendor_path: ../data_analysis_experiment_2_lora/vendor # contains the timestral package
+  # frozen: backbone weights fixed, only the head (and optionally the query token) train
+  # lora:   low-rank adapters on the attention QKV/output projections + the head
+  # full:   every backbone weight trains, with its own learning rate
+  mode: lora
+  train_query_token: true         # the pretrained forecast-query token becomes the per-channel CLS token
+  unfreeze_last_blocks: 0         # frozen/lora: also train the last N transformer blocks fully
+  lora: {rank: 32, alpha: 64, dropout: 0.0}
+
+input:
+  minutes: 15                     # input window length
+  sample_period_s: 1              # 1 = native 1 Hz grid; larger values average into bins (5, 10, 60 ...)
+  # Telemetry channels used as backbone rows. Channels an asset does not have are dropped per asset.
+  channels:
+    - motor_speed_rpm
+    - motor_current_a
+    - motor_power_kw
+    - suction_pressure_kpa
+    - discharge_pressure_kpa
+    - flow_m3_h
+    - fluid_temp_c
+    - bearing_temp_c
+    - motor_winding_temp_c
+    - vibration_rms_mm_s
+    - vibration_accel_rms_g
+    - vibration_crest_factor
+    - ambient_temp_c
+    - valve_position_pct
+  # Derived rows, always present: running (operating_mode == RUNNING), row_present
+  # (telemetry row exists: 0 during gateway outages), comm_loss and out_of_range quality bits.
+  derived: [running, row_present, comm_loss_flag, out_of_range_flag]
+  normalization:
+    method: asset_baseline        # asset_baseline (robust z from each asset's first hours) or none
+    baseline_hours: 24
+    running_only: true            # statistics from RUNNING rows only (fallback: all rows)
+    min_scale_fraction: 0.01      # scale floor as a fraction of |median| (plus an absolute 1e-3)
+  skip_baseline_period: true      # no windows end inside the baseline period (keeps it causal)
+
+labels:
+  # Independent (multi-label) targets. Each is a sigmoid output; several can be 1 at once.
+  classes:
+    - BEARING_WEAR
+    - SUCTION_STRAINER_CLOGGING
+    - CAVITATION
+    - DISCHARGE_RESTRICTION
+    - MISALIGNMENT
+    - IMBALANCE
+    - IMPELLER_WEAR
+    - AIR_ENTRAINMENT
+    - SENSOR_DRIFT
+    - SENSOR_STUCK
+    - SENSOR_CALIBRATION_SHIFT
+    - SENSOR_NOISE_SPIKES
+    - COMMUNICATION_LOSS
+  # Positive when the window end time t is inside [start, end) of an event of that type.
+  start: detectable               # detectable (detectable_utc), onset (onset_utc) or scoring (max(onset, detectable - 6 h))
+  end_pad_minutes: 0              # extend each event end
+  lead_minutes: 0                 # > 0: positive when the event is active at any time in [t, t + lead] (early warning)
+  ignore_pre_detectable: true     # between onset and start the class target is masked (no loss)
+  ignore_unobservable: true       # unobservable events mask their class for their full duration
+  # Episodes that end without a repair: the scorer still matches alerts up to 30 min after the end,
+  # so that span is masked (no loss) instead of negative.
+  post_end_ignore_minutes: 30
+  post_end_ignore_classes: [CAVITATION, AIR_ENTRAINMENT, SENSOR_DRIFT, SENSOR_STUCK,
+                            SENSOR_CALIBRATION_SHIFT, SENSOR_NOISE_SPIKES, COMMUNICATION_LOSS]
+
+data:
+  # A source is a directory with assets.csv, telemetry/asset_id=*/day=*/part-0.parquet,
+  # an events CSV and (optional) a benign-window CSV. Asset keys become "<source>/<asset_id>".
+  sources:
+    - name: public
+      root: ../raw/BusinessTurku_SinceAI2026_FINAL_BUILDER_PUBLISH/RETROFIT_AI_PARTICIPANTS_2026/data/full
+      events: [events_train.csv, events_validation.csv]
+      benign: [benign_windows_train_validation.csv]
+  # Which assets go to which role. Patterns are fnmatch globs on "<source>/<asset_id>".
+  train_assets: ["public/PUMP-0[1-7]"]
+  val_assets: ["public/PUMP-08", "public/PUMP-09"]
+  # Never read. The loader refuses any asset that matches these patterns.
+  locked_assets: ["public/PUMP-10", "public/PUMP-11", "public/PUMP-12", "gen-test*/*"]
+  cache_dir: cache                # dense per-asset arrays written by `run.py prepare`
+  train_stride_s: 60              # spacing of candidate training window end times
+  eval_stride_s: 60
+  sampler:
+    positive_fraction: 0.5        # share of each batch drawn from windows with >= 1 positive class
+    benign_fraction: 0.1          # share drawn from labelled benign windows (hard negatives)
+
+head:
+  channel_embedding_dim: 32       # learned identity of each row (Timestral itself is channel-agnostic)
+  row_stats: true                 # add window statistics in asset-z units (Timestral normalizes the level away)
+  token_pool: query               # query (CLS token only) or query_mean (CLS + mean of context patch tokens)
+  hidden_dim: 256
+  dropout: 0.1
+  pooling: class_attention        # class_attention (one attention query per class over rows) or mean
+
+loss:
+  type: bce                       # bce or focal
+  focal_gamma: 2.0
+  pos_weight: auto                # auto (neg/pos per class from the training index, clipped), none
+  max_pos_weight: 20.0
+  label_smoothing: 0.0
+
+train:
+  batch_size: 32                  # windows per step (each window packs ~18 rows)
+  grad_accumulation: 1
+  max_steps: 3000
+  learning_rate: 3.0e-4           # head (and LoRA) learning rate
+  backbone_learning_rate: 3.0e-5  # full mode and unfrozen blocks only
+  weight_decay: 0.01
+  warmup_steps: 100
+  schedule: cosine                # cosine or constant
+  gradient_clip: 1.0
+  eval_every: 250
+  checkpoint_every: 250
+  early_stopping:
+    metric: val/macro_auprc
+    patience_evals: 6
+  eval_max_windows: null          # cap validation windows per evaluation (null = all)
+
+predict:
+  max_windows: null               # final evaluation cap (every k-th window); null = all
+  threshold: 0.5                  # alert export: per-class probability threshold
+  persistence_windows: 15         # consecutive windows above threshold before an alert. 15 = 15 min at the 60 s
+                                  # validation stride (fixed rule, 7 Nov 2026; was 3). 12h configs (40 s) use 22.
+  cooldown_minutes: 720           # one alert per class and asset in this period

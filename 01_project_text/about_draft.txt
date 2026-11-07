@@ -1,0 +1,34 @@
+DRAFT for the empty form fields in submission-form-fields.txt. Copy what you want, then delete this file.
+
+=== Project name ===
+RETROFIT AI
+
+=== About the project (max 5000 characters) ===
+THE PROBLEM
+Factories, vessels and smaller industrial sites run machines that work well but cannot tell their condition. Operators often find a fault only when it has become a failure. The Business Turku challenge asks for intelligence on top of existing machines, without new equipment. The data is 1 Hz telemetry from industrial pumps. The organizer scorer rewards alerts that are early, causal and correct, with the correct fault type and few false alerts.
+
+OUR SOLUTION
+We use Timestral-28M, a pretrained time-series foundation model, as the backbone. We removed its forecasting head and trained a new multi-label head that gives one probability for each of the 13 fault types. Every 10 seconds, the model reads the last 3 hours of all pump sensors. LoRA adapters (rank 32) fine-tune the attention layers, and class attention pooling lets each fault type look at the sensors that matter for it.
+
+A causal alert rule turns the probabilities into alerts: the probability of a fault type must stay at or above 0.9 for 15 minutes, with a 12-hour cooldown for each fault type. For each alert, a sensor-removal test shows which signals the alert depends on. A local LLM (Qwen3.5-4B on Ollama) then writes repair steps from the pump manual, and a second LLM call checks every manual reference. The operator sees only checked advice.
+
+RESULTS
+On 7 validation pumps (the 2 official pumps and 5 that we generated with the organizer simulator), our challenge score is 81.8 against 65.6 for the organizer baseline B1. We detect 88 % of the fault events (baseline 71 %) and give the correct fault type for 75 % (baseline 38 %). The leave-one-pump-out estimate for new pumps is 77.6. Our test file has 34 alerts on PUMP-10, PUMP-11 and PUMP-12.
+
+HOW WE BUILT IT
+- Data: the 7 public training pumps and about 250 pump-weeks that we generated with the organizer simulator. The data loader cannot open the test pumps.
+- Training: PyTorch on one rented A100 GPU on RunPod, 5 hours, USD 8.97. The pretrained backbone stays fixed; only about 1.4 million weights are trained.
+- Alert rule: Optuna studies of threshold, averaging and persistence, with leave-one-pump-out checks. We froze the rule before we made any test alert.
+- Demo: a static web page replays two validation pumps with the saved model output, the alerts, the sensor evidence and the checked advice.
+
+CHALLENGES
+- Few fault events: the public training data has 26 observable events for 13 fault types. The generated pumps gave the model more than ten times as many events.
+- Slow faults such as bearing wear develop over hours, and a 15-minute window was too short. We trained 3 h, 6 h and 12 h windows on rented GPUs; the 3 h model gave the best validation score.
+- The validation set is small (24 events), so the validation scores are optimistic. Our precision (0.75) is lower than the baseline (0.85), mostly because of repeat alerts on faults that we already detected.
+- The organizer scorer merges alerts that are 5 minutes or less apart. We changed the gap boundary of our rule to agree with it.
+
+WHAT COMES NEXT
+- A pilot on a real site with real telemetry and the manufacturer's manuals. The manuals in our demo are written by our team from the organizer asset table.
+- Alert thresholds for each site, so each customer sets the balance between missed faults and false alarms.
+- On-site deployment: the model is small enough to run on site, so the data stays there.
+- Other machine types: the same pipeline works for any annotated time series and its manual.

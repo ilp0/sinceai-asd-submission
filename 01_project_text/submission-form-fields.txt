@@ -1,0 +1,31 @@
+Project name
+ShaftGuard
+
+Tagline
+Adding condition awareness to existing machines
+
+About the project *
+
+Timestral fine-tuned with LoRA to recognise emerging faults from live sensor readings.
+
+Objective:
+Detect developing machine and instrument problems on 12 simulated pumps, explain the evidence, and recommend human-reviewable actions.
+
+Our solution:
+Our prototype uses a fine-tuned a small open-weight Timestral time-series model to detect emerging faults in industrial machines. It identifies patterns in sensor data, shows which signals support each alert, and turns complex telemetry into clear guidance for operators. We adapted Timestral with LoRA to recognise fault types and built an LLM-powered dashboard that displays pump telemetry, explains alerts, and presents recommendations from maintenance manuals.
+
+The approach is designed for low-cost retrofitting: it can use existing telemetry, and the compact model can run locally without replacing machinery or continuously sending data to the cloud. The architecture can be adapted to other sensors and machine types, although each application needs suitable training data and validation (in the example case, the training needed $9 worth of fine tuning to adapt to the pump model). For reliability, alerts require sustained evidence, while maintenance advice undergoes a separate check against the supplied manual and is withheld if that check fails. Operators remain responsible for maintenance decisions. The intended business value is earlier intervention, better maintenance prioritisation and less unplanned downtime. Next step to pilot this would be with real equipment and maintenance teams to measure warning lead time, false alarms and practical usefulness.
+
+The main challenges were learning from limited labelled faults and detecting problems early without false alarms. We supplemented the synthetic training data with additional pump scenarios and required sustained fault probabilities before issuing alerts. Validation on unseen machines remains essential before real-world use.
+
+Built with *
+Python, Timestral-28M, LoRA, Qwen3.5-4B, pandas, Optuna, RunPod, ElevenLabs
+
+Repository *
+https://github.com/ilp0/sinceai-asd-submission
+
+Demo URL (optional)
+https://sinceai-asd-submission.0m.fi/
+
+Demo video *
+https://youtu.be/gRqIzP3AEmE

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RETROFIT AI · Pump monitoring</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">◈</span> RETROFIT AI</div>
+  <div class="player">
+    <button id="play" class="btn primary" title="Space">▶ Play</button>
+    <select id="speed" aria-label="Replay speed">
+      <option value="10">10 min/s</option><option value="30">30 min/s</option>
+      <option value="60" selected>60 min/s</option><option value="180">180 min/s</option>
+    </select>
+    <input type="range" id="cursor" min="1440" max="10079" value="1440" aria-label="Replay time">
+    <div id="clock" class="clock">—</div>
+  </div>
+</header>
+
+<main class="grid">
+  <section class="col center">
+    <section class="panel grow">
+      <h2>Alerts <span id="alert-count" class="count"></span></h2>
+      <div id="feed" class="feed"></div>
+    </section>
+  </section>
+
+  <aside class="col right">
+    <section class="panel live">
+      <div id="assets" class="pump-tabs"></div>
+      <div class="panel-head"><h2>Fault probability</h2><span class="muted small">alert at ≥ 90 %</span></div>
+      <canvas id="prob-chart" class="prob-chart"></canvas>
+      <div id="prob-bars" class="prob-bars"></div>
+      <div class="panel-head sens-head"><h2>Sensors</h2><span class="muted small">last 12 h</span></div>
+      <div id="charts" class="chart-col"></div>
+    </section>
+  </aside>
+</main>
+
+<div id="detail-home" hidden>
+  <div id="detail" class="detail">
+    <div class="m-body">
+      <div class="m-right">
+        <div id="guide" class="guide"></div>
+        <div id="clause" class="clause" hidden></div>
+        <div class="chat">
+          <div id="chat-log" class="chat-log"></div>
+          <div id="chat-qs" class="chat-qs"></div>
+        </div>
+      </div>
+    </div>
+    <div class="d-bar"><span class="muted small">Strongest signal: <b id="m-evidence">—</b></span><button id="m-close" class="btn ack">Acknowledge ✓</button></div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
