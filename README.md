@@ -10,6 +10,8 @@ Factories, vessels and smaller industrial sites operate machines that work well 
 
 We use Timestral-28M, a pretrained time-series foundation model, as the backbone. We removed its forecast head and trained a new multi-label fault head that gives one probability for each of the 13 fault types. The backbone reads a 3 h window of pump telemetry, and LoRA adapters (rank 32) fine-tune its attention layers. Class attention pooling lets each fault type look at the sensors that matter for it. For each alert, a sensor-removal test (occlusion) shows the operator which signals the model's alert depends on. A causal alert rule (probability ≥ 0.9 for 15 minutes, with a cooldown) changes the probabilities into alerts. On the validation pumps, this method scored 81.8 against 65.6 for the organizer baseline; the leave-one-pump-out estimate for new pumps is 77.6.
 
+The trained weights of the submitted model (LoRA adapters, query token and fault head: 1 419 213 values, 5.7 MB) are in [`05_source_code/model/`](05_source_code/model/), with a script that makes the full checkpoint from them and the public Timestral-28M weights. The weights are under the Timestral-28M licence (Modified MIT License, Mistral AI).
+
 ## Test predictions (the file to submit)
 
 [`predictions_test.csv`](predictions_test.csv) is the alert file for the test pumps, in the format of the organizer file `submission_template/predictions_template.csv`. It has 34 alerts: PUMP-10 (9), PUMP-11 (10) and PUMP-12 (15); 30 MACHINE and 4 SENSOR. It is identical to `05_source_code/predictions/predictions_test.csv`, where the method, the frozen alert rule and the validation scores are described.

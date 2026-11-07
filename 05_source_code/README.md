@@ -2,17 +2,19 @@
 
 | Folder | Content |
 |---|---|
+| `model/` | **The trained weights** of the submitted model (LoRA, query token and fault head; 1 419 213 values, 5.7 MB, safetensors), the Timestral-28M licence, and `rebuild_checkpoint.py`, which makes the full checkpoint from these weights and the public Timestral-28M weights. See its `README.md`. |
 | `predictions/` | **The test predictions** (`predictions_test.csv`, PUMP-10..12, organizer format, 34 alerts; the evidence text names the signals that the model's alert depends on), the same method on the validation pumps, the frozen alert rule and the occlusion results. |
 | `src/data_analysis_experiment_6_model/` | The model: Timestral-28M backbone with LoRA and a multi-label fault head (13 fault types). Training, evaluation, benchmark and RunPod scripts. See its `README.md` and `HANDOVER.md`. |
 | `src/optimize/` | The alert-rule study: threshold, running average and persistence, Optuna grid studies, per-class thresholds, leave-one-pump-out estimates, and `predict_test_fine.py`, which made the test predictions. See its `README.md`. |
 
-Not included (data and dependencies): the organizer data package, the experiment-6 training data, the Timestral-28M base weights (experiment 2 `base_model/`, `vendor/`), the trained checkpoint `runs/rp3-3h-r32-v1/checkpoint_last_step11500.pt` (121 MB), the prediction parquet files and the Python environments.
+Not included (data and dependencies): the organizer data package, the experiment-6 training data, the Timestral-28M base weights and code (experiment 2 `base_model/`, `vendor/`), the full checkpoint `runs/rp3-3h-r32-v1/checkpoint_last_step11500.pt` (121 MB; `model/rebuild_checkpoint.py` makes it again from the trained weights in `model/`), the prediction parquet files and the Python environments.
 
 ## Reproduce the test predictions
 
 The scripts expect the experiment-repository layout: `raw/<package>/RETROFIT_AI_PARTICIPANTS_2026/`, the base model in `data_analysis_experiment_2_lora/`, and the checkpoint under `data_analysis_experiment_6_model/runs/rp3-3h-r32-v1/`. `optimize/alerts.py` also reads `RETROFIT_PKG`, but the experiment-6 code (`analysis/predict_test.py`) finds the package only under `raw/`, so keep that layout (in this package: `src/raw/`).
 
 ```bash
+cd model && python rebuild_checkpoint.py && cd ..     # the checkpoint, from the trained weights (see model/README.md)
 cd src/optimize
 python predict_test_fine.py predict --asset PUMP-10     # also PUMP-11, PUMP-12 (about 17 min each on an M5 Pro, MPS)
 python predict_test_fine.py alerts --split test         # -> results/submission-fine/predictions_test.csv
