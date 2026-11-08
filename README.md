@@ -1,5 +1,8 @@
 # RETROFIT AI — Make Existing Machines Intelligent
 
+Team:
+[Petteri Hallipelto](https://www.linkedin.com/in/petteri-hallipelto/), [Ilpo Loikkanen](https://www.linkedin.com/in/ilpo-loikkanen/)
+
 Our submission to the Business Turku challenge at the Since AI Hackathon 2026 (Turku, 6–8 November 2026).
 
 ## The challenge
